@@ -1,17 +1,19 @@
-package com.mechempire.sdk.runtime;
+package com.mechempire.sdk.core.factory;
 
 import com.mechempire.sdk.core.game.GameMapComponent;
+import com.mechempire.sdk.runtime.BaseCamp;
+import com.mechempire.sdk.runtime.Bunker;
 
 /**
  * package: com.mechempire.sdk.core.game
  *
  * @author <tairy> tairyguo@gmail.com
  * @date 2020/12/13 下午5:18
+ * <p>
+ * 地图组件工厂类
  */
 public class GameMapComponentFactory {
     /**
-     * 地图组件工厂类
-     *
      * @param componentType 组件类型
      * @return 组建对象
      */
