@@ -8,7 +8,7 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 地图组件
  */
-abstract public class GameMapComponent extends AbstractGameObject {
+abstract public class AbstractGameMapComponent extends AbstractGameObject {
 
     /**
      * 对象 ID
@@ -56,7 +56,7 @@ abstract public class GameMapComponent extends AbstractGameObject {
         return id;
     }
 
-    public GameMapComponent setId(int id) {
+    public AbstractGameMapComponent setId(int id) {
         this.id = id;
         return this;
     }
@@ -65,7 +65,7 @@ abstract public class GameMapComponent extends AbstractGameObject {
         return name;
     }
 
-    public GameMapComponent setName(String name) {
+    public AbstractGameMapComponent setName(String name) {
         this.name = name;
         return this;
     }
@@ -74,7 +74,7 @@ abstract public class GameMapComponent extends AbstractGameObject {
         return type;
     }
 
-    public GameMapComponent setType(String type) {
+    public AbstractGameMapComponent setType(String type) {
         this.type = type;
         return this;
     }
@@ -83,7 +83,7 @@ abstract public class GameMapComponent extends AbstractGameObject {
         return positionX;
     }
 
-    public GameMapComponent setPositionX(double positionX) {
+    public AbstractGameMapComponent setPositionX(double positionX) {
         this.positionX = positionX;
         return this;
     }
@@ -92,7 +92,7 @@ abstract public class GameMapComponent extends AbstractGameObject {
         return positionY;
     }
 
-    public GameMapComponent setPositionY(double positionY) {
+    public AbstractGameMapComponent setPositionY(double positionY) {
         this.positionY = positionY;
         return this;
     }
@@ -101,7 +101,7 @@ abstract public class GameMapComponent extends AbstractGameObject {
         return width;
     }
 
-    public GameMapComponent setWidth(double width) {
+    public AbstractGameMapComponent setWidth(double width) {
         this.width = width;
         return this;
     }
@@ -110,7 +110,7 @@ abstract public class GameMapComponent extends AbstractGameObject {
         return height;
     }
 
-    public GameMapComponent setHeight(double height) {
+    public AbstractGameMapComponent setHeight(double height) {
         this.height = height;
         return this;
     }
@@ -119,7 +119,7 @@ abstract public class GameMapComponent extends AbstractGameObject {
         return affinity;
     }
 
-    public GameMapComponent setAffinity(short affinity) {
+    public AbstractGameMapComponent setAffinity(short affinity) {
         this.affinity = affinity;
         return this;
     }

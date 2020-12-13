@@ -51,7 +51,7 @@ abstract public class AbstractGameMap extends AbstractGameObject {
      * 地图组件
      * hash 结构,便于查找
      */
-    protected HashMap<Integer, GameMapComponent> components = new HashMap<>(8);
+    protected HashMap<Integer, AbstractGameMapComponent> components = new HashMap<>(8);
 
     /**
      * 从地图组件 hash 中获取某个组件
@@ -59,14 +59,14 @@ abstract public class AbstractGameMap extends AbstractGameObject {
      * @param id id
      * @return 组件对象
      */
-    public abstract GameMapComponent getMapComponent(int id);
+    public abstract AbstractGameMapComponent getMapComponent(int id);
 
     /**
      * 为地图添加组件
      *
-     * @param gameMapComponent 组件对象
+     * @param abstractGameMapComponent 组件对象
      */
-    public abstract void addMapComponent(GameMapComponent gameMapComponent);
+    public abstract void addMapComponent(AbstractGameMapComponent abstractGameMapComponent);
 
     public int getId() {
         return id;

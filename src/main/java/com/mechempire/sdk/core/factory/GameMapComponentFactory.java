@@ -1,6 +1,6 @@
 package com.mechempire.sdk.core.factory;
 
-import com.mechempire.sdk.core.game.GameMapComponent;
+import com.mechempire.sdk.core.game.AbstractGameMapComponent;
 import com.mechempire.sdk.runtime.BaseCamp;
 import com.mechempire.sdk.runtime.Bunker;
 
@@ -17,7 +17,7 @@ public class GameMapComponentFactory {
      * @param componentType 组件类型
      * @return 组建对象
      */
-    public static GameMapComponent getGameMapComponent(String componentType) {
+    public static AbstractGameMapComponent getGameMapComponent(String componentType) {
         if (componentType == null) {
             return null;
         }

@@ -8,5 +8,5 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 载具抽象类
  */
-abstract public class AbstractVehicle extends AbstractGameObject {
+abstract public class AbstractVehicle extends AbstractGameMapComponent {
 }

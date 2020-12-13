@@ -1,7 +1,7 @@
 package com.mechempire.sdk.runtime;
 
 import com.mechempire.sdk.core.game.AbstractGameMap;
-import com.mechempire.sdk.core.game.GameMapComponent;
+import com.mechempire.sdk.core.game.AbstractGameMapComponent;
 
 /**
  * package: com.mechempire.sdk.runtime
@@ -14,12 +14,12 @@ import com.mechempire.sdk.core.game.GameMapComponent;
 public class GameMap extends AbstractGameMap {
 
     @Override
-    public GameMapComponent getMapComponent(int id) {
+    public AbstractGameMapComponent getMapComponent(int id) {
         return this.components.get(id);
     }
 
     @Override
-    public void addMapComponent(GameMapComponent gameMapComponent) {
-        this.components.put(gameMapComponent.getId(), gameMapComponent);
+    public void addMapComponent(AbstractGameMapComponent abstractGameMapComponent) {
+        this.components.put(abstractGameMapComponent.getId(), abstractGameMapComponent);
     }
 }

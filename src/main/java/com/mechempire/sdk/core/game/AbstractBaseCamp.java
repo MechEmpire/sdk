@@ -4,9 +4,9 @@ package com.mechempire.sdk.core.game;
  * package: com.mechempire.sdk.core.game
  *
  * @author <tairy> tairyguo@gmail.com
- * @date 2020/12/13 下午6:57
+ * @date 2020/12/13 下午8:25
  * <p>
- * 弹药抽象类
+ * 基地抽象类
  */
-public class AbstractAmmunition extends AbstractGameMapComponent {
+public class AbstractBaseCamp extends AbstractGameMapComponent {
 }
