@@ -1,6 +1,7 @@
 package com.mechempire.sdk.core.factory;
 
 import com.mechempire.sdk.constant.MapComponentConstant;
+import com.mechempire.sdk.core.game.AbstractGameMapComponent;
 
 /**
  * package: com.mechempire.sdk.core.factory
@@ -29,6 +30,22 @@ public class GameMapComponentFactoryProducer {
             return new ObstacleFactory();
         } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_ROAD)) {
             return new RoadFactory();
+        }
+
+        return null;
+    }
+
+    public static AbstractGameMapComponent getComponent(String componentType, short componentId) {
+        if (null == componentType || componentType.length() == 0 || componentId == 0) {
+            return null;
+        }
+
+        if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_BASECAMP)) {
+            return (new BaseCampFactory()).getBaseCamp(componentId);
+        } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_OBSTACLE)) {
+            return (new ObstacleFactory()).getObstacle(componentId);
+        } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_ROAD)) {
+            return (new RoadFactory()).getRoad(componentId);
         }
 
         return null;

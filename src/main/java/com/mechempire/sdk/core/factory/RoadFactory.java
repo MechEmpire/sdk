@@ -13,20 +13,20 @@ import com.mechempire.sdk.core.game.AbstractRoad;
  */
 public class RoadFactory extends AbstractGameMapComponentFactory {
     @Override
-    public AbstractBaseCamp getBaseCamp(short baseCampType) {
+    public AbstractBaseCamp getBaseCamp(short baseCampId) {
         return null;
     }
 
     @Override
-    public AbstractRoad getRoad(short roadType) {
-        if (!MapComponentConstant.ROAD_TYPE.containsKey(roadType)) {
+    public AbstractRoad getRoad(short roadId) {
+        if (!MapComponentConstant.ROAD_TYPE.containsKey(roadId)) {
             return null;
         }
 
         AbstractRoad instance = null;
 
         try {
-            instance = (AbstractRoad) MapComponentConstant.ROAD_TYPE.get(roadType).newInstance();
+            instance = (AbstractRoad) MapComponentConstant.ROAD_TYPE.get(roadId).newInstance();
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
@@ -35,7 +35,7 @@ public class RoadFactory extends AbstractGameMapComponentFactory {
     }
 
     @Override
-    public AbstractObstacle getObstacle(short obstacleType) {
+    public AbstractObstacle getObstacle(short obstacleId) {
         return null;
     }
 }

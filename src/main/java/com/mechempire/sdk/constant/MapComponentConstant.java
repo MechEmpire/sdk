@@ -23,15 +23,19 @@ public class MapComponentConstant {
 
     public static final String COMPONENT_ROAD = "road";
 
-    public static final short TYPE_DEFAULT_BASECAMP = 1;
+    // TODO 可以移植到数据库
+    public static final short DEFAULT_BASECAMP_ID = 1;
 
-    public static final short TYPE_DEFAULT_OBSTACLE = 1;
+    public static final short DEFAULT_OBSTACLE_ID = 1;
 
-    public static final short TYPE_DEFAULT_ROAD = 1;
+    public static final short DEFAULT_ROAD_ID = 1;
 
-    public static final Map<Short, Class<?>> BASECAMP_TYPE = ImmutableMap.of(TYPE_DEFAULT_BASECAMP, DefaultBaseCamp.class);
+    public static final Map<Short, Class<?>> BASECAMP_TYPE =
+            ImmutableMap.of(DEFAULT_BASECAMP_ID, DefaultBaseCamp.class);
 
-    public static final Map<Short, Class<?>> OBSTACLE_TYPE = ImmutableMap.of(TYPE_DEFAULT_OBSTACLE, DefaultObstacle.class);
+    public static final Map<Short, Class<?>> OBSTACLE_TYPE =
+            ImmutableMap.of(DEFAULT_OBSTACLE_ID, DefaultObstacle.class);
 
-    public static final Map<Short, Class<?>> ROAD_TYPE = ImmutableMap.of(TYPE_DEFAULT_ROAD, DefaultRoad.class);
+    public static final Map<Short, Class<?>> ROAD_TYPE =
+            ImmutableMap.of(DEFAULT_ROAD_ID, DefaultRoad.class);
 }

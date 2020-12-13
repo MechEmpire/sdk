@@ -14,9 +14,9 @@ import com.mechempire.sdk.core.game.AbstractRoad;
  */
 abstract public class AbstractGameMapComponentFactory {
 
-    abstract public AbstractBaseCamp getBaseCamp(short baseCampType);
+    abstract public AbstractBaseCamp getBaseCamp(short baseCampId);
 
-    abstract public AbstractRoad getRoad(short roadType);
+    abstract public AbstractRoad getRoad(short roadId);
 
-    abstract public AbstractObstacle getObstacle(short obstacleType);
+    abstract public AbstractObstacle getObstacle(short obstacleId);
 }
