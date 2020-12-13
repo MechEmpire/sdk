@@ -1,5 +1,6 @@
 package com.mechempire.sdk.core.factory;
 
+import com.mechempire.sdk.constant.MechComponentConstant;
 import com.mechempire.sdk.core.game.AbstractAmmunition;
 import com.mechempire.sdk.core.game.AbstractVehicle;
 import com.mechempire.sdk.core.game.AbstractWeapon;
@@ -12,7 +13,7 @@ import com.mechempire.sdk.core.game.AbstractWeapon;
  * <p>
  * 弹药工厂逻辑
  */
-public class AmmunitionMechFactory extends AbstractMechComponentFactory {
+public class AmmunitionFactory extends AbstractMechComponentFactory {
     @Override
     public AbstractWeapon getWeapon(int weaponId) {
         return null;
@@ -25,6 +26,18 @@ public class AmmunitionMechFactory extends AbstractMechComponentFactory {
 
     @Override
     public AbstractAmmunition getAmmunition(int ammunitionId) {
-        return null;
+        if (!MechComponentConstant.AMMUNITION_LIST.containsKey(ammunitionId)) {
+            return null;
+        }
+
+        AbstractAmmunition instance = null;
+
+        try {
+            instance = (AbstractAmmunition) MechComponentConstant.AMMUNITION_LIST.get(ammunitionId).newInstance();
+        } catch (InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return instance;
     }
 }
