@@ -1,7 +1,7 @@
 package com.mechempire.sdk.runtime;
 
-import com.mechempire.sdk.core.game.AbstractMapComponent;
 import com.mechempire.sdk.core.game.ICollideable;
+import com.mechempire.sdk.core.game.GameMapComponent;
 
 /**
  * package: com.mechempire.sdk.meta
@@ -11,5 +11,5 @@ import com.mechempire.sdk.core.game.ICollideable;
  * <p>
  * 堡垒
  */
-public class Bunker extends AbstractMapComponent implements ICollideable {
+public class Bunker extends GameMapComponent implements ICollideable {
 }
