@@ -8,5 +8,5 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 通路抽象类
  */
-public class AbstractRoad extends AbstractGameMapComponent {
+abstract public class AbstractRoad extends AbstractGameMapComponent {
 }

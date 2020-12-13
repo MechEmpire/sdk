@@ -8,5 +8,5 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 基地抽象类
  */
-public class AbstractBaseCamp extends AbstractGameMapComponent {
+abstract public class AbstractBaseCamp extends AbstractGameMapComponent {
 }

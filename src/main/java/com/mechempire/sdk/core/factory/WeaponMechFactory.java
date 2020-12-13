@@ -11,7 +11,7 @@ import com.mechempire.sdk.core.game.AbstractWeapon;
  * @date 2020/12/13 下午7:04
  * <p>
  */
-public class WeaponMechFactory extends AbstractMechFactory {
+public class WeaponMechFactory extends AbstractMechComponentFactory {
     @Override
     public AbstractWeapon getWeapon(int weaponId) {
         return null;

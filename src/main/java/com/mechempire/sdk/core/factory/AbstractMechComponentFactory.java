@@ -12,7 +12,7 @@ import com.mechempire.sdk.core.game.AbstractWeapon;
  * <p>
  * 机甲抽象工厂
  */
-abstract public class AbstractMechFactory {
+abstract public class AbstractMechComponentFactory {
 
     /**
      * 武器工厂

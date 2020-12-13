@@ -12,7 +12,7 @@ import com.mechempire.sdk.core.game.AbstractWeapon;
  * <p>
  * 弹药工厂逻辑
  */
-public class AmmunitionMechFactory extends AbstractMechFactory {
+public class AmmunitionMechFactory extends AbstractMechComponentFactory {
     @Override
     public AbstractWeapon getWeapon(int weaponId) {
         return null;

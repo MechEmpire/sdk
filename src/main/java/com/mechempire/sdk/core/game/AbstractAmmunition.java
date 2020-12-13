@@ -8,5 +8,5 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 弹药抽象类
  */
-public class AbstractAmmunition extends AbstractGameMapComponent {
+abstract public class AbstractAmmunition extends AbstractGameMapComponent {
 }

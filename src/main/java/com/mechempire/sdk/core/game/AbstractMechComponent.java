@@ -8,5 +8,5 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 机甲组件抽象类
  */
-public class AbstractMechComponent extends AbstractGameMapComponent {
+abstract public class AbstractMechComponent extends AbstractGameMapComponent {
 }

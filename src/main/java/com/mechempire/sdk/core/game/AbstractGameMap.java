@@ -18,22 +18,22 @@ abstract public class AbstractGameMap extends AbstractGameObject {
     protected int id = 0;
 
     /**
-     * 地图宽
+     * 地图宽 单位 px
      */
     protected double width;
 
     /**
-     * 地图高
+     * 地图高 单位 px
      */
     protected double height;
 
     /**
-     * 栅格宽
+     * 栅格宽 单位 px
      */
     protected double gridWidth;
 
     /**
-     * 栅格高
+     * 栅格高 单位 px
      */
     protected double gridHeight;
 

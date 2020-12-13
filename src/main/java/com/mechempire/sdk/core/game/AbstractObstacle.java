@@ -8,5 +8,5 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 障碍物抽象类
  */
-public class AbstractObstacle extends AbstractGameMapComponent {
+abstract public class AbstractObstacle extends AbstractGameMapComponent {
 }
