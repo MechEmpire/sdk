@@ -1,4 +1,4 @@
-package com.mechempire.sdk.core;
+package com.mechempire.sdk.core.game;
 
 /**
  * package: com.mechempire.sdk.core
