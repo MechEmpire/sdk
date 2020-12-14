@@ -6,7 +6,7 @@ package com.mechempire.sdk.core.game;
  * @author <tairy> tairyguo@gmail.com
  * @date 2020/12/13 下午1:35
  * <p>
- * 可移动的对象行为
+ * 移动行为接口
  */
 public interface IMovable extends IGameObjectBehavior {
 
@@ -22,4 +22,10 @@ public interface IMovable extends IGameObjectBehavior {
      * 前进
      */
     void forward();
+
+    void backward();
+
+    void turnLeft();
+
+    void turnRight();
 }

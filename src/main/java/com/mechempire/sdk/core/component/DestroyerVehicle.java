@@ -11,6 +11,7 @@ import com.mechempire.sdk.core.game.AbstractVehicle;
  * 毁灭者载具
  */
 public class DestroyerVehicle extends AbstractVehicle {
+
     @Override
     public void moveTo(double x, double y) {
 
@@ -18,6 +19,21 @@ public class DestroyerVehicle extends AbstractVehicle {
 
     @Override
     public void forward() {
+
+    }
+
+    @Override
+    public void backward() {
+
+    }
+
+    @Override
+    public void turnLeft() {
+
+    }
+
+    @Override
+    public void turnRight() {
 
     }
 }

@@ -1,5 +1,7 @@
 package com.mechempire.sdk.core.game;
 
+import com.mechempire.sdk.core.message.IProducer;
+
 /**
  * package: com.mechempire.sdk.core.game
  *
@@ -8,5 +10,10 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 机甲运行控制
  */
-public interface IMechControlFlow extends Runnable {
+public interface IMechControlFlow {
+
+    /**
+     * 启动机甲
+     */
+    void run(IProducer producer);
 }
