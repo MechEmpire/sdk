@@ -1,9 +1,9 @@
 package com.mechempire.sdk.constant;
 
 import com.google.common.collect.ImmutableMap;
-import com.mechempire.sdk.runtime.CannonWeapon;
-import com.mechempire.sdk.runtime.DefaultAmmunition;
-import com.mechempire.sdk.runtime.DestroyerVehicle;
+import com.mechempire.sdk.core.component.CannonWeapon;
+import com.mechempire.sdk.core.component.DefaultAmmunition;
+import com.mechempire.sdk.core.component.DestroyerVehicle;
 
 import java.util.Map;
 

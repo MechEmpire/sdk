@@ -1,4 +1,4 @@
-package com.mechempire.sdk.runtime;
+package com.mechempire.sdk.core.component;
 
 import com.mechempire.sdk.core.game.AbstractVehicle;
 

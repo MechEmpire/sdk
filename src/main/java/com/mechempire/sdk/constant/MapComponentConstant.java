@@ -1,9 +1,9 @@
 package com.mechempire.sdk.constant;
 
 import com.google.common.collect.ImmutableMap;
-import com.mechempire.sdk.runtime.DefaultBaseCamp;
-import com.mechempire.sdk.runtime.DefaultObstacle;
-import com.mechempire.sdk.runtime.DefaultRoad;
+import com.mechempire.sdk.core.component.DefaultBaseCamp;
+import com.mechempire.sdk.core.component.DefaultObstacle;
+import com.mechempire.sdk.core.component.DefaultRoad;
 
 import java.util.Map;
 
