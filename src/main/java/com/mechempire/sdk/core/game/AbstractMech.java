@@ -9,4 +9,82 @@ package com.mechempire.sdk.core.game;
  * 机甲抽象类
  */
 abstract public class AbstractMech extends AbstractGameMapComponent {
+
+    /**
+     * 载具 id
+     */
+    protected int vehicleId = 1;
+
+    /**
+     * 武器 id
+     */
+    protected int weaponId = 1;
+
+    /**
+     * 弹药 id
+     */
+    protected int ammunitionId = 1;
+
+    /**
+     * 载具
+     */
+    protected AbstractVehicle vehicle;
+
+    /**
+     * 武器
+     */
+    protected AbstractWeapon weapon;
+
+    /**
+     * 弹药
+     */
+    protected AbstractAmmunition ammunition;
+
+    public int getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(int vehicleId) {
+        this.vehicleId = vehicleId;
+    }
+
+    public int getWeaponId() {
+        return weaponId;
+    }
+
+    public void setWeaponId(int weaponId) {
+        this.weaponId = weaponId;
+    }
+
+    public int getAmmunitionId() {
+        return ammunitionId;
+    }
+
+    public void setAmmunitionId(int ammunitionId) {
+        this.ammunitionId = ammunitionId;
+    }
+
+    public AbstractVehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(AbstractVehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public AbstractWeapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(AbstractWeapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public AbstractAmmunition getAmmunition() {
+        return ammunition;
+    }
+
+    public void setAmmunition(AbstractAmmunition ammunition) {
+        this.ammunition = ammunition;
+    }
 }

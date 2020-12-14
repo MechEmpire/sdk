@@ -8,5 +8,9 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 载具抽象类
  */
-abstract public class AbstractVehicle extends AbstractGameMapComponent {
+abstract public class AbstractVehicle extends AbstractGameMapComponent implements IMovable {
+    /**
+     * 载具速度
+     */
+    private double speed;
 }
