@@ -15,5 +15,5 @@ public interface IMechControlFlow {
     /**
      * 启动机甲
      */
-    void run(IProducer producer);
+    void run(IProducer producer, AbstractTeam team);
 }

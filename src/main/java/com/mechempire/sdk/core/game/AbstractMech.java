@@ -40,6 +40,11 @@ abstract public class AbstractMech extends AbstractGameMapComponent {
      */
     protected AbstractAmmunition ammunition;
 
+    /**
+     * 机甲位置
+     */
+    protected AbstractPosition position;
+
     public int getVehicleId() {
         return vehicleId;
     }
@@ -86,5 +91,13 @@ abstract public class AbstractMech extends AbstractGameMapComponent {
 
     public void setAmmunition(AbstractAmmunition ammunition) {
         this.ammunition = ammunition;
+    }
+
+    public AbstractPosition getPosition() {
+        return position;
+    }
+
+    public void setPosition(AbstractPosition position) {
+        this.position = position;
     }
 }
