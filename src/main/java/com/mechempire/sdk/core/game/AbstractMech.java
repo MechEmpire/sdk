@@ -9,7 +9,6 @@ package com.mechempire.sdk.core.game;
  * 机甲抽象类
  */
 abstract public class AbstractMech extends AbstractGameMapComponent {
-
     /**
      * 载具 id
      */

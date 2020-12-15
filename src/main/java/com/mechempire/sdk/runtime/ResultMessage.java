@@ -13,4 +13,5 @@ import com.mechempire.sdk.core.message.AbstractMessage;
  * client 接受之后渲染地图
  */
 public class ResultMessage extends AbstractMessage {
+
 }
