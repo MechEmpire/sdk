@@ -20,4 +20,14 @@ public class CannonWeapon extends AbstractWeapon {
     public void collide() {
 
     }
+
+    @Override
+    public void turnLeft() {
+
+    }
+
+    @Override
+    public void turnRight() {
+
+    }
 }

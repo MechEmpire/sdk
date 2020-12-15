@@ -9,23 +9,13 @@ package com.mechempire.sdk.core.game;
  * 移动行为接口
  */
 public interface IMovable extends IGameObjectBehavior {
+    /**
+     * 根据对象的属性, 计算目标点坐标, 生成 moveTo 指令
+     */
+    byte[] forward();
 
     /**
-     * 移动到指定坐标
-     *
-     * @param x x
-     * @param y y
+     * 后退
      */
-    void moveTo(double x, double y);
-
-    /**
-     * 前进
-     */
-    void forward();
-
-    void backward();
-
-    void turnLeft();
-
-    void turnRight();
+    byte[] backward();
 }

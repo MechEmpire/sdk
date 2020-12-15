@@ -1,5 +1,6 @@
 package com.mechempire.sdk.core.component;
 
+import com.mechempire.sdk.core.command.MoveCommand;
 import com.mechempire.sdk.core.game.AbstractVehicle;
 
 /**
@@ -13,27 +14,12 @@ import com.mechempire.sdk.core.game.AbstractVehicle;
 public class DestroyerVehicle extends AbstractVehicle {
 
     @Override
-    public void moveTo(double x, double y) {
-
+    public byte[] forward() {
+        return MoveCommand.moveTo(1, 20.0, 20.0);
     }
 
     @Override
-    public void forward() {
-
-    }
-
-    @Override
-    public void backward() {
-
-    }
-
-    @Override
-    public void turnLeft() {
-
-    }
-
-    @Override
-    public void turnRight() {
-
+    public byte[] backward() {
+        return new byte[0];
     }
 }

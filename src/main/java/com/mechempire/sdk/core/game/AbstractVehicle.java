@@ -13,4 +13,14 @@ abstract public class AbstractVehicle extends AbstractGameMapComponent implement
      * 载具速度
      */
     private double speed;
+
+    /**
+     * 宽:px
+     */
+    private double width;
+
+    /**
+     * 高:px
+     */
+    private double height;
 }
