@@ -9,7 +9,7 @@ import com.mechempire.sdk.core.game.AbstractGameMapComponent;
  * @author <tairy> tairyguo@gmail.com
  * @date 2020/12/13 下午8:56
  * <p>
- * 游戏地图组件抽象工厂
+ * 地图组件抽象工厂
  */
 public class GameMapComponentFactoryProducer {
 
@@ -23,7 +23,6 @@ public class GameMapComponentFactoryProducer {
         if (null == componentType || componentType.length() == 0) {
             return null;
         }
-
         if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_BASECAMP)) {
             return new BaseCampFactory();
         } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_OBSTACLE)) {
@@ -31,15 +30,18 @@ public class GameMapComponentFactoryProducer {
         } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_ROAD)) {
             return new RoadFactory();
         }
-
         return null;
     }
 
+    /**
+     * @param componentType 组件类型
+     * @param componentId   组建 ID
+     * @return 组建
+     */
     public static AbstractGameMapComponent getComponent(String componentType, short componentId) {
         if (null == componentType || componentType.length() == 0 || componentId == 0) {
             return null;
         }
-
         if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_BASECAMP)) {
             return (new BaseCampFactory()).getBaseCamp(componentId);
         } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_OBSTACLE)) {
@@ -47,7 +49,6 @@ public class GameMapComponentFactoryProducer {
         } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_ROAD)) {
             return (new RoadFactory()).getRoad(componentId);
         }
-
         return null;
     }
 }

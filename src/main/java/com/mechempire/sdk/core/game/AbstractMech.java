@@ -1,5 +1,9 @@
 package com.mechempire.sdk.core.game;
 
+import com.mechempire.sdk.core.component.CannonWeapon;
+import com.mechempire.sdk.core.component.DefaultAmmunition;
+import com.mechempire.sdk.core.component.DestroyerVehicle;
+
 /**
  * package: com.mechempire.sdk.core.game
  *
@@ -10,19 +14,19 @@ package com.mechempire.sdk.core.game;
  */
 abstract public class AbstractMech extends AbstractGameMapComponent {
     /**
-     * 载具 id
+     * 载具类
      */
-    protected int vehicleId = 1;
+    protected Class<?> vehicleClazz = DestroyerVehicle.class;
 
     /**
-     * 武器 id
+     * 武器类
      */
-    protected int weaponId = 1;
+    protected Class<?> weaponClazz = CannonWeapon.class;
 
     /**
-     * 弹药 id
+     * 弹药类
      */
-    protected int ammunitionId = 1;
+    protected Class<?> ammunitionClazz = DefaultAmmunition.class;
 
     /**
      * 载具
@@ -44,28 +48,28 @@ abstract public class AbstractMech extends AbstractGameMapComponent {
      */
     protected AbstractPosition position;
 
-    public int getVehicleId() {
-        return vehicleId;
+    public Class<?> getVehicleClazz() {
+        return vehicleClazz;
     }
 
-    public void setVehicleId(int vehicleId) {
-        this.vehicleId = vehicleId;
+    public void setVehicleClazz(Class<?> vehicleClazz) {
+        this.vehicleClazz = vehicleClazz;
     }
 
-    public int getWeaponId() {
-        return weaponId;
+    public Class<?> getWeaponClazz() {
+        return weaponClazz;
     }
 
-    public void setWeaponId(int weaponId) {
-        this.weaponId = weaponId;
+    public void setWeaponClazz(Class<?> weaponClazz) {
+        this.weaponClazz = weaponClazz;
     }
 
-    public int getAmmunitionId() {
-        return ammunitionId;
+    public Class<?> getAmmunitionClazz() {
+        return ammunitionClazz;
     }
 
-    public void setAmmunitionId(int ammunitionId) {
-        this.ammunitionId = ammunitionId;
+    public void setAmmunitionClazz(Class<?> ammunitionClazz) {
+        this.ammunitionClazz = ammunitionClazz;
     }
 
     public AbstractVehicle getVehicle() {

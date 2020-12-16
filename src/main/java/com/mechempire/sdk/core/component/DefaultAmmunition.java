@@ -9,4 +9,13 @@ import com.mechempire.sdk.core.game.AbstractAmmunition;
  * @date 2020/12/13 下午9:50
  */
 public class DefaultAmmunition extends AbstractAmmunition {
+    @Override
+    public byte[] forward() {
+        return new byte[0];
+    }
+
+    @Override
+    public byte[] backward() {
+        return new byte[0];
+    }
 }

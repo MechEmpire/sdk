@@ -1,7 +1,6 @@
 package com.mechempire.sdk.core.factory;
 
-import com.mechempire.sdk.constant.MechComponentConstant;
-import com.mechempire.sdk.core.game.AbstractMech;
+import com.mechempire.sdk.core.game.*;
 
 /**
  * package: com.mechempire.sdk.core.factory
@@ -18,21 +17,21 @@ public class MechFactory {
      *
      * @param mech 待装配的机甲
      */
-    public static void assemblyMech(AbstractMech mech) {
+    public static void assemblyMech(AbstractMech mech) throws Exception {
 
         if (null == mech.getVehicle()) {
-            AbstractMechComponentFactory vehicleFactory = MechComponentFactoryProducer.getFactory(MechComponentConstant.COMPONENT_VEHICLE);
-            mech.setVehicle(vehicleFactory.getVehicle(mech.getVehicleId()));
+            AbstractGameMapComponent vehicle = GameMapComponentFactory.getComponent(mech.getVehicleClazz());
+            mech.setVehicle((AbstractVehicle) vehicle);
         }
 
         if (null == mech.getWeapon()) {
-            AbstractMechComponentFactory weaponFactory = MechComponentFactoryProducer.getFactory(MechComponentConstant.COMPONENT_WEAPON);
-            mech.setWeapon(weaponFactory.getWeapon(mech.getWeaponId()));
+            AbstractGameMapComponent weapon = GameMapComponentFactory.getComponent(mech.getWeaponClazz());
+            mech.setWeapon((AbstractWeapon) weapon);
         }
 
         if (null == mech.getAmmunition()) {
-            AbstractMechComponentFactory ammunitionFactory = MechComponentFactoryProducer.getFactory(MechComponentConstant.COMPONENT_AMMUNITION);
-            mech.setAmmunition(ammunitionFactory.getAmmunition(mech.getAmmunitionId()));
+            AbstractGameMapComponent ammunition = GameMapComponentFactory.getComponent(mech.getAmmunitionClazz());
+            mech.setAmmunition((AbstractAmmunition) ammunition);
         }
     }
 }

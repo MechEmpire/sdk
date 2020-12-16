@@ -8,5 +8,24 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 弹药抽象类
  */
-abstract public class AbstractAmmunition extends AbstractGameMapComponent {
+abstract public class AbstractAmmunition extends AbstractGameMapComponent implements IMovable {
+    /**
+     * 弹药运行速度
+     */
+    protected double speed;
+
+    /**
+     * 宽:px
+     */
+    protected double width;
+
+    /**
+     * 高:px
+     */
+    protected double height;
+
+    /**
+     * 位置
+     */
+    private AbstractPosition position;
 }

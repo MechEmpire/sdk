@@ -15,7 +15,7 @@ public class DestroyerVehicle extends AbstractVehicle {
 
     @Override
     public byte[] forward() {
-        return MoveCommand.moveTo(1, 20.0, 20.0);
+        return MoveCommand.moveTo(this.getId(), 20.0, 20.0);
     }
 
     @Override

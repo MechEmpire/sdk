@@ -9,11 +9,10 @@ package com.mechempire.sdk.core.game;
  * 地图组件
  */
 abstract public class AbstractGameMapComponent extends AbstractGameObject {
-
     /**
      * 对象 ID
      */
-    protected int id;
+    protected int id = 0;
 
     /**
      * 对象名称
