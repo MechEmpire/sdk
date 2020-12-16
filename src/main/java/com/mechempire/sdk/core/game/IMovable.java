@@ -9,7 +9,6 @@ package com.mechempire.sdk.core.game;
  * 移动行为接口
  */
 public interface IMovable {
-
     /**
      * 获取可移动对象速度
      *

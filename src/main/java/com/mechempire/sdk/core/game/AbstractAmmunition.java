@@ -1,6 +1,7 @@
 package com.mechempire.sdk.core.game;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * package: com.mechempire.sdk.core.game
@@ -10,15 +11,16 @@ import lombok.Data;
  * <p>
  * 弹药抽象类
  */
-@Data
 abstract public class AbstractAmmunition extends AbstractGameMapComponent implements IMovable {
     /**
-     * 弹药运行速度
+     * 运行速度
      */
     protected double speed;
 
     /**
      * 所属机甲
      */
+    @Setter
+    @Getter
     protected AbstractMech mech;
 }

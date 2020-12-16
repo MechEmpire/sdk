@@ -9,6 +9,5 @@ import lombok.Data;
  * @author <tairy> tairyguo@gmail.com
  * @date 2020/12/13 下午9:23
  */
-@Data
 public class DefaultRoad extends AbstractRoad {
 }
