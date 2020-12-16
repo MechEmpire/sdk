@@ -11,6 +11,7 @@ import com.mechempire.sdk.core.game.AbstractWeapon;
  * 加农炮类
  */
 public class CannonWeapon extends AbstractWeapon {
+
     @Override
     public void shooting() {
 

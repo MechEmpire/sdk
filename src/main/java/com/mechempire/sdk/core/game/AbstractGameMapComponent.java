@@ -1,6 +1,7 @@
 package com.mechempire.sdk.core.game;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * package: com.mechempire.sdk.core
@@ -11,6 +12,7 @@ import lombok.Data;
  * 地图组件
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 abstract public class AbstractGameMapComponent extends AbstractGameObject {
     /**
      * 对象 ID
@@ -28,9 +30,19 @@ abstract public class AbstractGameMapComponent extends AbstractGameObject {
     protected String type;
 
     /**
-     * 对象坐标位置
+     * 对象质心位置
      */
     protected AbstractPosition position;
+
+    /**
+     * 起点 X
+     */
+    protected double startX;
+
+    /**
+     * 起点 Y
+     */
+    protected double startY;
 
     /**
      * 对象宽
@@ -38,9 +50,9 @@ abstract public class AbstractGameMapComponent extends AbstractGameObject {
     protected double width;
 
     /**
-     * 对象高
+     * 对象长
      */
-    protected double height;
+    protected double length;
 
     /**
      * 组件亲和性

@@ -13,6 +13,26 @@ import com.mechempire.sdk.core.game.AbstractVehicle;
  */
 public class DestroyerVehicle extends AbstractVehicle {
     /**
+     * 起点 X
+     */
+    protected double startX;
+
+    /**
+     * 起点 Y
+     */
+    protected double startY;
+
+    /**
+     * 对象宽
+     */
+    protected double width = 64.0;
+
+    /**
+     * 对象高
+     */
+    protected double length = 96.0;
+
+    /**
      * 载具速度
      */
     protected double speed = 12.0;
