@@ -10,5 +10,5 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 碰撞可能会造成生命值的变化
  */
-public interface ICollideable extends IGameObjectBehavior {
+public interface ICollideable {
 }

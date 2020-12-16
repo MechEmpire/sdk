@@ -20,18 +20,24 @@ public class MechFactory {
     public static void assemblyMech(AbstractMech mech) throws Exception {
 
         if (null == mech.getVehicle()) {
-            AbstractGameMapComponent vehicle = GameMapComponentFactory.getComponent(mech.getVehicleClazz());
-            mech.setVehicle((AbstractVehicle) vehicle);
+            AbstractGameMapComponent component = GameMapComponentFactory.getComponent(mech.getVehicleClazz());
+            AbstractVehicle vehicle = (AbstractVehicle) component;
+            vehicle.setMech(mech);
+            mech.setVehicle(vehicle);
         }
 
         if (null == mech.getWeapon()) {
-            AbstractGameMapComponent weapon = GameMapComponentFactory.getComponent(mech.getWeaponClazz());
-            mech.setWeapon((AbstractWeapon) weapon);
+            AbstractGameMapComponent component = GameMapComponentFactory.getComponent(mech.getWeaponClazz());
+            AbstractWeapon weapon = (AbstractWeapon) component;
+            weapon.setMech(mech);
+            mech.setWeapon(weapon);
         }
 
         if (null == mech.getAmmunition()) {
-            AbstractGameMapComponent ammunition = GameMapComponentFactory.getComponent(mech.getAmmunitionClazz());
-            mech.setAmmunition((AbstractAmmunition) ammunition);
+            AbstractGameMapComponent component = GameMapComponentFactory.getComponent(mech.getAmmunitionClazz());
+            AbstractAmmunition ammunition = (AbstractAmmunition) component;
+            ammunition.setMech(mech);
+            mech.setAmmunition(ammunition);
         }
     }
 }

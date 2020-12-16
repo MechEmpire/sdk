@@ -12,6 +12,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class GameMapComponentFactory {
 
+    /**
+     * component 计数器
+     */
     private static final AtomicInteger componentCount = new AtomicInteger(0);
 
     /**

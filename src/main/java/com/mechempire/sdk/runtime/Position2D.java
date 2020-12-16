@@ -16,4 +16,11 @@ public class Position2D extends AbstractPosition {
 
     private double y;
 
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
 }

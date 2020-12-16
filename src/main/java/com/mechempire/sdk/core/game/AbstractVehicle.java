@@ -1,5 +1,7 @@
 package com.mechempire.sdk.core.game;
 
+import lombok.Data;
+
 /**
  * package: com.mechempire.sdk.meta
  *
@@ -8,6 +10,7 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 载具抽象类
  */
+@Data
 abstract public class AbstractVehicle extends AbstractGameMapComponent implements IMovable {
     /**
      * 载具速度
@@ -15,17 +18,7 @@ abstract public class AbstractVehicle extends AbstractGameMapComponent implement
     protected double speed;
 
     /**
-     * 宽:px
+     * 所属机甲对象
      */
-    protected double width;
-
-    /**
-     * 高:px
-     */
-    protected double height;
-
-    /**
-     * 位置
-     */
-    private AbstractPosition position;
+    protected AbstractMech mech;
 }

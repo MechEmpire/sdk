@@ -1,6 +1,7 @@
 package com.mechempire.sdk.core.component;
 
 import com.mechempire.sdk.core.game.AbstractWeapon;
+import lombok.Data;
 
 /**
  * package: com.mechempire.sdk.runtime
@@ -10,6 +11,7 @@ import com.mechempire.sdk.core.game.AbstractWeapon;
  * <p>
  * 加农炮类
  */
+@Data
 public class CannonWeapon extends AbstractWeapon {
     @Override
     public void shooting() {

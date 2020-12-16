@@ -8,5 +8,9 @@ package com.mechempire.sdk.core.game;
  * <p>
  * 有生命的对象行为
  */
-public interface ILiving extends IGameObjectBehavior {
+public interface ILiving {
+    /**
+     * 获取血量
+     */
+    double getBloodCount();
 }
