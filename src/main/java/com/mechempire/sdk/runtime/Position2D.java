@@ -1,6 +1,7 @@
 package com.mechempire.sdk.runtime;
 
 import com.mechempire.sdk.core.game.AbstractPosition;
+import lombok.Data;
 
 /**
  * package: com.mechempire.sdk.runtime
@@ -10,17 +11,19 @@ import com.mechempire.sdk.core.game.AbstractPosition;
  * <p>
  * 二维质心坐标
  */
+@Data
 public class Position2D extends AbstractPosition {
 
     /**
-     * x
+     * 坐标构造器
+     *
+     * @param x x
+     * @param y y
      */
-    private double x;
-
-    /**
-     * y
-     */
-    private double y;
+    public Position2D(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 
     /**
      * 质心坐标构造器

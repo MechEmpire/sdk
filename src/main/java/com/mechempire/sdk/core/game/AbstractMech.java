@@ -44,4 +44,29 @@ abstract public class AbstractMech extends AbstractGameMapComponent implements I
      * 弹药
      */
     protected AbstractAmmunition ammunition;
+
+    /**
+     * 队伍
+     */
+    protected AbstractTeam team;
+
+    /**
+     * 更新机甲位置, 附带更新了附属组件的位置
+     *
+     * @param position 位置
+     */
+    public void updatePosition(AbstractPosition position) {
+        this.setPosition(position);
+        if (null != this.getVehicle()) {
+            this.getVehicle().setPosition(position);
+        }
+
+        if (null != this.getWeapon()) {
+            this.getWeapon().setPosition(position);
+        }
+
+        if (null != this.getAmmunition()) {
+            this.getAmmunition().setPosition(position);
+        }
+    }
 }

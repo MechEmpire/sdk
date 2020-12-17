@@ -1,6 +1,7 @@
 package com.mechempire.sdk.core.component;
 
 import com.mechempire.sdk.core.game.AbstractAmmunition;
+import lombok.Data;
 
 /**
  * package: com.mechempire.sdk.runtime
@@ -8,6 +9,7 @@ import com.mechempire.sdk.core.game.AbstractAmmunition;
  * @author <tairy> tairyguo@gmail.com
  * @date 2020/12/13 下午9:50
  */
+@Data
 public class DefaultAmmunition extends AbstractAmmunition {
     /**
      * 弹药速度

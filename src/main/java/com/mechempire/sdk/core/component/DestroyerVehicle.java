@@ -2,6 +2,7 @@ package com.mechempire.sdk.core.component;
 
 import com.mechempire.sdk.core.command.MoveCommand;
 import com.mechempire.sdk.core.game.AbstractVehicle;
+import lombok.Data;
 
 /**
  * package: com.mechempire.sdk.runtime
@@ -11,6 +12,7 @@ import com.mechempire.sdk.core.game.AbstractVehicle;
  * <p>
  * 毁灭者载具
  */
+@Data
 public class DestroyerVehicle extends AbstractVehicle {
     /**
      * 起点 X
@@ -33,9 +35,9 @@ public class DestroyerVehicle extends AbstractVehicle {
     protected double length = 96.0;
 
     /**
-     * 载具速度
+     * 载具速度 px/ms
      */
-    protected double speed = 12.0;
+    protected double speed = 0.1;
 
     @Override
     public double getSpeed() {
@@ -44,7 +46,7 @@ public class DestroyerVehicle extends AbstractVehicle {
 
     @Override
     public byte[] forward() {
-        return MoveCommand.moveTo(this.id, 20.0, 20.0);
+        return MoveCommand.moveTo(this.id, 200.0, 200.0);
     }
 
     @Override
