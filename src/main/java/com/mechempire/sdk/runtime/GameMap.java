@@ -2,6 +2,7 @@ package com.mechempire.sdk.runtime;
 
 import com.mechempire.sdk.core.game.AbstractGameMap;
 import com.mechempire.sdk.core.game.AbstractGameMapComponent;
+import lombok.Data;
 
 /**
  * package: com.mechempire.sdk.runtime
@@ -11,6 +12,7 @@ import com.mechempire.sdk.core.game.AbstractGameMapComponent;
  * <p>
  * 地图对象
  */
+@Data
 public class GameMap extends AbstractGameMap {
 
     @Override

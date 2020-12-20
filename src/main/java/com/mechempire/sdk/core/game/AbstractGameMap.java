@@ -1,5 +1,7 @@
 package com.mechempire.sdk.core.game;
 
+import lombok.Data;
+
 import java.util.HashMap;
 
 /**
@@ -10,6 +12,7 @@ import java.util.HashMap;
  * <p>
  * 地图抽象类
  */
+@Data
 abstract public class AbstractGameMap extends AbstractGameObject {
 
     /**
@@ -23,9 +26,9 @@ abstract public class AbstractGameMap extends AbstractGameObject {
     protected double width;
 
     /**
-     * 地图高 单位 px
+     * 地图长 单位 px
      */
-    protected double height;
+    protected double length;
 
     /**
      * 栅格宽 单位 px
@@ -33,9 +36,9 @@ abstract public class AbstractGameMap extends AbstractGameObject {
     protected double gridWidth;
 
     /**
-     * 栅格高 单位 px
+     * 栅格长 单位 px
      */
-    protected double gridHeight;
+    protected double gridLength;
 
     /**
      * 地图名称

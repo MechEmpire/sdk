@@ -10,25 +10,33 @@ import com.google.common.primitives.Bytes;
  */
 abstract public class AbstractMessage {
     /**
-     * 指令序列
+     * 字节序列
      */
-    protected byte[] commandSeq = new byte[0];
+    protected byte[] byteSeq = new byte[0];
 
     /**
-     * 填充指令序列
+     * 填充字节序列
      *
-     * @param commandSeq 新指令
+     * @param byteSeq 新序列
      */
-    public void appendCommandSeq(byte[] commandSeq) {
-        this.commandSeq = Bytes.concat(this.commandSeq, commandSeq);
+    public void appendByteSeq(byte[] byteSeq) {
+        this.byteSeq = Bytes.concat(this.byteSeq, byteSeq);
     }
 
     /**
-     * 获取当前帧的指令序列
+     * 获取字节序列
      *
-     * @return 指令序列
+     * @return 字节序列
      */
-    public byte[] getCommandSeq() {
-        return this.commandSeq;
+    public byte[] getByteSeq() {
+        return this.byteSeq;
+    }
+
+    /**
+     * 清空指令序列
+     */
+    public void clearByteSeq() {
+        this.byteSeq = null;
+        this.byteSeq = new byte[0];
     }
 }

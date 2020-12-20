@@ -21,14 +21,6 @@ public class CommandMessage extends AbstractMessage {
      */
     private int teamId;
 
-    /**
-     * 清空指令序列
-     */
-    public void cleanCommandSeq() {
-        this.commandSeq = null;
-        this.commandSeq = new byte[0];
-    }
-
     public int getTeamId() {
         return teamId;
     }
