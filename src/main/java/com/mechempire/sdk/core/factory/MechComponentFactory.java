@@ -10,7 +10,7 @@ import com.mechempire.sdk.constant.MechComponentConstant;
  * <p>
  * 机甲组件抽象类
  */
-public class MechComponentFactoryProducer {
+public class MechComponentFactory {
 
     /**
      * 获取机甲组件的工厂类

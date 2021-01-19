@@ -3,6 +3,8 @@ package com.mechempire.sdk.core.game;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.awt.*;
+
 /**
  * package: com.mechempire.sdk.core
  *
@@ -60,4 +62,9 @@ abstract public class AbstractGameMapComponent extends AbstractGameObject {
      * 缺省 0
      */
     protected short affinity = 0;
+
+    /**
+     * shape
+     */
+    protected Shape shape;
 }

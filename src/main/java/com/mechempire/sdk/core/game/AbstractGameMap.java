@@ -2,6 +2,7 @@ package com.mechempire.sdk.core.game;
 
 import lombok.Data;
 
+import java.awt.*;
 import java.util.HashMap;
 
 /**

@@ -11,7 +11,7 @@ import com.mechempire.sdk.core.game.AbstractGameMapComponent;
  * <p>
  * 地图组件抽象工厂
  */
-public class GameMapComponentFactoryProducer {
+public class GameMapComponentFactory {
 
     /**
      * 生成各组件对应的工厂
