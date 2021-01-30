@@ -37,6 +37,11 @@ message EngineWorld {
     map<int32, MapComponent> components = 2;
 };
 
+message InitRequest {
+    double screenWidth = 1;
+    double screenHeight = 2;
+};
+
 message CommonData {
     int32 statusCode = 1;
     int64 timestamp = 2;
