@@ -3,6 +3,8 @@ package com.mechempire.sdk.core.factory;
 import com.mechempire.sdk.constant.MapComponentConstant;
 import com.mechempire.sdk.core.game.AbstractGameMapComponent;
 
+import java.util.Objects;
+
 /**
  * package: com.mechempire.sdk.core.factory
  *
@@ -20,7 +22,7 @@ public class GameMapComponentFactory {
      * @return 组件对应的工厂类
      */
     public static AbstractGameMapComponentFactory getFactory(String componentType) {
-        if (null == componentType || componentType.length() == 0) {
+        if (Objects.isNull(componentType) || componentType.length() == 0) {
             return null;
         }
         if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_BASECAMP)) {
@@ -35,10 +37,10 @@ public class GameMapComponentFactory {
 
     /**
      * @param componentType 组件类型
-     * @param componentId   组建 ID
+     * @param componentId   组件 ID
      * @return 组建
      */
-    public static AbstractGameMapComponent getComponent(String componentType, short componentId) {
+    public static AbstractGameMapComponent createComponent(String componentType, short componentId) {
         if (null == componentType || componentType.length() == 0 || componentId == 0) {
             return null;
         }

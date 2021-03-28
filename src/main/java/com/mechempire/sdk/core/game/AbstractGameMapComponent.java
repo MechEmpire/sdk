@@ -1,9 +1,8 @@
 package com.mechempire.sdk.core.game;
 
+import javafx.scene.shape.Shape;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.awt.*;
 
 /**
  * package: com.mechempire.sdk.core

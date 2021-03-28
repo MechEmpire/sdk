@@ -30,7 +30,7 @@ public class PositionCal {
     public static AbstractPosition getComponentNextFrame2DPosition(double fromX, double fromY, double toX, double toY, double speed) {
         BigDecimal xIncr = getDifference(toX, fromX);
         BigDecimal yIncr = getDifference(toY, fromY);
-        
+
         BigDecimal xNumerator = getProduct(getProduct(speed, RuntimeConstant.FRAME_GAP).doubleValue(), xIncr.doubleValue());
         BigDecimal yNumerator = getProduct(getProduct(speed, RuntimeConstant.FRAME_GAP).doubleValue(), yIncr.doubleValue());
 
@@ -43,11 +43,11 @@ public class PositionCal {
             deltaX = xNumerator.divide(denominator, RoundingMode.HALF_UP);
             deltaY = yNumerator.divide(denominator, RoundingMode.HALF_UP);
 
-            if (Math.abs(xIncr.doubleValue()) < deltaX.doubleValue()) {
+            if (Math.abs(xIncr.doubleValue()) < Math.abs(deltaX.doubleValue())) {
                 deltaX = xIncr;
             }
 
-            if (Math.abs(yIncr.doubleValue()) < deltaY.doubleValue()) {
+            if (Math.abs(yIncr.doubleValue()) < Math.abs(deltaY.doubleValue())) {
                 deltaY = yIncr;
             }
         }

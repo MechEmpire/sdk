@@ -1,8 +1,9 @@
 package com.mechempire.sdk.core.game;
 
+import com.google.common.collect.Maps;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.awt.*;
 import java.util.HashMap;
 
 /**
@@ -14,6 +15,7 @@ import java.util.HashMap;
  * 地图抽象类
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 abstract public class AbstractGameMap extends AbstractGameObject {
 
     /**
@@ -55,7 +57,7 @@ abstract public class AbstractGameMap extends AbstractGameObject {
      * 地图组件
      * hash 结构,便于查找
      */
-    protected HashMap<Integer, AbstractGameMapComponent> components = new HashMap<>(8);
+    protected HashMap<Integer, AbstractGameMapComponent> components = Maps.newHashMap();
 
     /**
      * 从地图组件 hash 中获取某个组件

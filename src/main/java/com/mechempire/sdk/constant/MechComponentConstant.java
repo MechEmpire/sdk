@@ -32,5 +32,4 @@ public class MechComponentConstant {
     public static final Map<Integer, Class<?>> VEHICLE_LIST = ImmutableMap.of(ID_DESTROYER_VEHICLE, DestroyerVehicle.class);
 
     public static final Map<Integer, Class<?>> AMMUNITION_LIST = ImmutableMap.of(ID_DEFAULT_AMMUNITION, DefaultAmmunition.class);
-
 }

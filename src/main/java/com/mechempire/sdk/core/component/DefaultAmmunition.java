@@ -22,12 +22,7 @@ public class DefaultAmmunition extends AbstractAmmunition {
     }
 
     @Override
-    public byte[] forward() {
-        return new byte[0];
-    }
-
-    @Override
-    public byte[] backward() {
+    public byte[] forward(double targetX, double targetY) {
         return new byte[0];
     }
 }

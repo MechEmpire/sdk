@@ -4,6 +4,7 @@ import com.mechempire.sdk.core.component.CannonWeapon;
 import com.mechempire.sdk.core.component.DefaultAmmunition;
 import com.mechempire.sdk.core.component.DestroyerVehicle;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * package: com.mechempire.sdk.core.game
@@ -14,6 +15,7 @@ import lombok.Data;
  * 机甲抽象类
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 abstract public class AbstractMech extends AbstractGameMapComponent implements ILiving {
     /**
      * 载具类

@@ -3,6 +3,7 @@ package com.mechempire.sdk.runtime;
 import com.mechempire.sdk.core.game.AbstractGameMap;
 import com.mechempire.sdk.core.game.AbstractGameMapComponent;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * package: com.mechempire.sdk.runtime
@@ -13,6 +14,7 @@ import lombok.Data;
  * 地图对象
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class GameMap extends AbstractGameMap {
 
     @Override

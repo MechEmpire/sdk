@@ -19,10 +19,5 @@ public interface IMovable {
     /**
      * 根据对象的属性, 计算目标点坐标, 生成 moveTo 指令
      */
-    byte[] forward();
-
-    /**
-     * 后退
-     */
-    byte[] backward();
+    byte[] forward(double targetX, double targetY);
 }
