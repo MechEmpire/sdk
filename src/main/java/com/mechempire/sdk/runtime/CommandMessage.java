@@ -1,6 +1,7 @@
 package com.mechempire.sdk.runtime;
 
 import com.mechempire.sdk.core.message.AbstractMessage;
+import lombok.Setter;
 
 /**
  * package: com.mechempire.sdk.runtime
@@ -19,14 +20,6 @@ public class CommandMessage extends AbstractMessage {
     /**
      * team id
      */
-    private int teamId;
-
-    public int getTeamId() {
-        return teamId;
-    }
-
-    public CommandMessage setTeamId(int teamId) {
-        this.teamId = teamId;
-        return this;
-    }
+    @Setter
+    private long teamId;
 }

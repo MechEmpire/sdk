@@ -21,6 +21,13 @@ public interface IProducer {
 
     /**
      * 生产消息
+     *
+     * @param message 生产消息对象
      */
     void product(AbstractMessage message);
+
+    /**
+     * 重置队列
+     */
+    void reset();
 }

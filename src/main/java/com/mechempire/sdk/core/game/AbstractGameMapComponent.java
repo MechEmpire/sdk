@@ -1,5 +1,6 @@
 package com.mechempire.sdk.core.game;
 
+import com.mechempire.sdk.constant.MapComponentConstant;
 import javafx.scene.shape.Shape;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -28,7 +29,7 @@ abstract public class AbstractGameMapComponent extends AbstractGameObject {
     /**
      * 对象类型
      */
-    protected String type;
+    protected MapComponentConstant type;
 
     /**
      * 对象质心位置
@@ -60,7 +61,7 @@ abstract public class AbstractGameMapComponent extends AbstractGameObject {
      * 红方/中立/蓝方:1/0/-1
      * 缺省 0
      */
-    protected short affinity = 0;
+    protected int affinity = 0;
 
     /**
      * shape

@@ -3,6 +3,7 @@ package com.mechempire.sdk.runtime;
 import com.mechempire.sdk.core.message.AbstractMessage;
 import com.mechempire.sdk.core.message.IProducer;
 
+import java.util.Objects;
 import java.util.Queue;
 
 /**
@@ -24,7 +25,7 @@ public class LocalCommandMessageProducer implements IProducer {
      */
     @Override
     public void setQueue(Queue<AbstractMessage> queue) {
-        if (null != this.queue || null == queue) {
+        if (Objects.nonNull(this.queue) || Objects.isNull(queue)) {
             return;
         }
         this.queue = queue;
@@ -32,9 +33,17 @@ public class LocalCommandMessageProducer implements IProducer {
 
     @Override
     public void product(AbstractMessage message) {
-        if (null == this.queue) {
+        if (Objects.isNull(this.queue) || Objects.isNull(message)) {
             return;
         }
         this.queue.offer(message);
+    }
+
+    @Override
+    public void reset() {
+        if (Objects.isNull(this.queue)) {
+            return;
+        }
+        this.queue.clear();
     }
 }

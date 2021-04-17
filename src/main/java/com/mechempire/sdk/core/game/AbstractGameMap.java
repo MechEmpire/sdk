@@ -1,10 +1,14 @@
 package com.mechempire.sdk.core.game;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * package: com.mechempire.sdk.meta
@@ -46,12 +50,17 @@ abstract public class AbstractGameMap extends AbstractGameObject {
     /**
      * 地图名称
      */
-    protected String name = "mechempire_map";
+    protected String name = "map_v1";
 
     /**
-     * 地图版本
+     * 地图背景
      */
-    protected String version = "v1";
+    protected Background background;
+
+    /**
+     * 图片组件
+     */
+    protected List<ImageView> imageViewList = Lists.newArrayList();
 
     /**
      * 地图组件

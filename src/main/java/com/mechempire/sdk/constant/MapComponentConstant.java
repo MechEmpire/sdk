@@ -1,11 +1,6 @@
 package com.mechempire.sdk.constant;
 
-import com.google.common.collect.ImmutableMap;
-import com.mechempire.sdk.core.component.DefaultBaseCamp;
-import com.mechempire.sdk.core.component.DefaultObstacle;
-import com.mechempire.sdk.core.component.DefaultRoad;
-
-import java.util.Map;
+import lombok.Getter;
 
 /**
  * package: com.mechempire.sdk.constant
@@ -15,27 +10,23 @@ import java.util.Map;
  * <p>
  * 地图组件常量定义
  */
-public class MapComponentConstant {
+public enum MapComponentConstant {
+    COMPONENT_BASECAMP(1, "basecamp"),
+    COMPONENT_OBSTACLE(2, "obstacle"),
+    COMPONENT_ROAD(3, "road"),
+    COMPONENT_MECH(4, "mech"),
+    COMPONENT_WEAPON(5, "weapon"),
+    COMPONENT_VEHICLE(6, "vehicle"),
+    ;
 
-    public static final String COMPONENT_BASECAMP = "basecamp";
+    @Getter
+    private final int code;
 
-    public static final String COMPONENT_OBSTACLE = "obstacle";
+    @Getter
+    private final String name;
 
-    public static final String COMPONENT_ROAD = "road";
-
-    // TODO 可以移植到数据库
-    public static final short DEFAULT_BASECAMP_ID = 1;
-
-    public static final short DEFAULT_OBSTACLE_ID = 1;
-
-    public static final short DEFAULT_ROAD_ID = 1;
-
-    public static final Map<Short, Class<?>> BASECAMP_TYPE =
-            ImmutableMap.of(DEFAULT_BASECAMP_ID, DefaultBaseCamp.class);
-
-    public static final Map<Short, Class<?>> OBSTACLE_TYPE =
-            ImmutableMap.of(DEFAULT_OBSTACLE_ID, DefaultObstacle.class);
-
-    public static final Map<Short, Class<?>> ROAD_TYPE =
-            ImmutableMap.of(DEFAULT_ROAD_ID, DefaultRoad.class);
+    MapComponentConstant(int code, String name) {
+        this.code = code;
+        this.name = name;
+    }
 }

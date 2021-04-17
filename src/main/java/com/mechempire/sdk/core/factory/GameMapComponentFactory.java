@@ -1,6 +1,5 @@
 package com.mechempire.sdk.core.factory;
 
-import com.mechempire.sdk.constant.MapComponentConstant;
 import com.mechempire.sdk.core.game.AbstractGameMapComponent;
 
 import java.util.Objects;
@@ -14,43 +13,25 @@ import java.util.Objects;
  * 地图组件抽象工厂
  */
 public class GameMapComponentFactory {
+    /**
+     * 组建数量
+     */
+    private static int componentCount = 0;
 
     /**
-     * 生成各组件对应的工厂
+     * 生成地图组件
      *
-     * @param componentType 组件类型
-     * @return 组件对应的工厂类
+     * @param componentClazz 组件类
+     * @param <T>            类
+     * @return 新组件
+     * @throws Exception 异常
      */
-    public static AbstractGameMapComponentFactory getFactory(String componentType) {
-        if (Objects.isNull(componentType) || componentType.length() == 0) {
+    public static <T extends AbstractGameMapComponent> T createComponent(Class<T> componentClazz) throws Exception {
+        if (Objects.isNull(componentClazz)) {
             return null;
         }
-        if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_BASECAMP)) {
-            return new BaseCampFactory();
-        } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_OBSTACLE)) {
-            return new ObstacleFactory();
-        } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_ROAD)) {
-            return new RoadFactory();
-        }
-        return null;
-    }
-
-    /**
-     * @param componentType 组件类型
-     * @param componentId   组件 ID
-     * @return 组建
-     */
-    public static AbstractGameMapComponent createComponent(String componentType, short componentId) {
-        if (null == componentType || componentType.length() == 0 || componentId == 0) {
-            return null;
-        }
-        if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_BASECAMP)) {
-            return (new BaseCampFactory()).getBaseCamp(componentId);
-        } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_OBSTACLE)) {
-            return (new ObstacleFactory()).getObstacle(componentId);
-        } else if (componentType.equalsIgnoreCase(MapComponentConstant.COMPONENT_ROAD)) {
-            return (new RoadFactory()).getRoad(componentId);
-        }
-        return null;
+        T component = componentClazz.newInstance();
+        component.setId(componentCount++);
+        return component;
     }
 }
