@@ -16,7 +16,7 @@ public class GameMapComponentFactory {
     /**
      * 组建数量
      */
-    private static int componentCount = 0;
+    private static int componentCount = 1;
 
     /**
      * 生成地图组件

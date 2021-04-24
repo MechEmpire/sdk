@@ -2048,10 +2048,16 @@ public final class CommonDataProto {
         getNameBytes();
 
     /**
-     * <code>uint32 type = 3;</code>
+     * <code>string type = 3;</code>
      * @return The type.
      */
-    int getType();
+    java.lang.String getType();
+    /**
+     * <code>string type = 3;</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
 
     /**
      * <code>double startX = 4;</code>
@@ -2127,6 +2133,7 @@ public final class CommonDataProto {
     }
     private MapComponent() {
       name_ = "";
+      type_ = "";
       shape_ = 0;
     }
 
@@ -2171,9 +2178,10 @@ public final class CommonDataProto {
               name_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              type_ = input.readUInt32();
+              type_ = s;
               break;
             }
             case 33: {
@@ -2410,14 +2418,41 @@ public final class CommonDataProto {
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private int type_;
+    private volatile java.lang.Object type_;
     /**
-     * <code>uint32 type = 3;</code>
+     * <code>string type = 3;</code>
      * @return The type.
      */
     @java.lang.Override
-    public int getType() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int STARTX_FIELD_NUMBER = 4;
@@ -2540,8 +2575,8 @@ public final class CommonDataProto {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (type_ != 0) {
-        output.writeUInt32(3, type_);
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
       }
       if (startX_ != 0D) {
         output.writeDouble(4, startX_);
@@ -2580,9 +2615,8 @@ public final class CommonDataProto {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (type_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, type_);
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
       }
       if (startX_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
@@ -2631,8 +2665,8 @@ public final class CommonDataProto {
           != other.getId()) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (getType()
-          != other.getType()) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
       if (java.lang.Double.doubleToLongBits(getStartX())
           != java.lang.Double.doubleToLongBits(
               other.getStartX())) return false;
@@ -2669,7 +2703,7 @@ public final class CommonDataProto {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
+      hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + STARTX_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getStartX()));
@@ -2831,7 +2865,7 @@ public final class CommonDataProto {
 
         name_ = "";
 
-        type_ = 0;
+        type_ = "";
 
         startX_ = 0D;
 
@@ -2946,8 +2980,9 @@ public final class CommonDataProto {
           name_ = other.name_;
           onChanged();
         }
-        if (other.getType() != 0) {
-          setType(other.getType());
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
         }
         if (other.getStartX() != 0D) {
           setStartX(other.getStartX());
@@ -3106,33 +3141,78 @@ public final class CommonDataProto {
         return this;
       }
 
-      private int type_ ;
+      private java.lang.Object type_ = "";
       /**
-       * <code>uint32 type = 3;</code>
+       * <code>string type = 3;</code>
        * @return The type.
        */
-      @java.lang.Override
-      public int getType() {
-        return type_;
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 type = 3;</code>
+       * <code>string type = 3;</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type = 3;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(int value) {
-        
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 type = 3;</code>
+       * <code>string type = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
         
-        type_ = 0;
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 3;</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
         onChanged();
         return this;
       }
@@ -7320,7 +7400,7 @@ public final class CommonDataProto {
       "\001(\r\022\021\n\tpositionX\030\002 \001(\001\022\021\n\tpositionY\030\003 \001(" +
       "\001\"\"\n\nPosition2D\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\"\205\002" +
       "\n\014MapComponent\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t" +
-      "\022\014\n\004type\030\003 \001(\r\022\016\n\006startX\030\004 \001(\001\022\016\n\006startY" +
+      "\022\014\n\004type\030\003 \001(\t\022\016\n\006startX\030\004 \001(\001\022\016\n\006startY" +
       "\030\005 \001(\001\022\r\n\005width\030\006 \001(\001\022\016\n\006length\030\007 \001(\001\022\020\n" +
       "\010affinity\030\010 \001(\005\022\035\n\010position\030\t \001(\0132\013.Posi" +
       "tion2D\022+\n\005shape\030\n \001(\0162\034.MapComponent.Com" +

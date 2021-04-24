@@ -1,8 +1,6 @@
 package com.mechempire.sdk.core.game;
 
-import com.mechempire.sdk.core.component.CannonWeapon;
-import com.mechempire.sdk.core.component.DefaultAmmunition;
-import com.mechempire.sdk.core.component.DestroyerVehicle;
+import com.mechempire.sdk.constant.MapComponent;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -18,19 +16,19 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 abstract public class AbstractMech extends AbstractGameMapComponent implements ILiving {
     /**
-     * 载具类
+     * 载具组件
      */
-    protected Class<?> vehicleClazz = DestroyerVehicle.class;
+    protected MapComponent vehicleComponent = MapComponent.DESTROYER_VEHICLE;
 
     /**
-     * 武器类
+     * 武器组件
      */
-    protected Class<?> weaponClazz = CannonWeapon.class;
+    protected MapComponent weaponComponent = MapComponent.CANNON_WEAPON;
 
     /**
-     * 弹药类
+     * 弹药组件
      */
-    protected Class<?> ammunitionClazz = DefaultAmmunition.class;
+    protected MapComponent ammunitionComponent = MapComponent.DEFAULT_AMMUNITION;
 
     /**
      * 载具

@@ -27,7 +27,7 @@ message Position2D {
 message MapComponent {
   uint32 id = 1;
   string name = 2;
-  uint32 type = 3;
+  string type = 3;
   double startX = 4;
   double startY = 5;
   double width = 6;

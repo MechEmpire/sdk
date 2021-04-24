@@ -11,6 +11,9 @@ import lombok.Getter;
  * 地图组件常量定义
  */
 public enum MapComponentConstant {
+    /**
+     * 组建类型
+     */
     COMPONENT_BASECAMP(1, "basecamp"),
     COMPONENT_OBSTACLE(2, "obstacle"),
     COMPONENT_ROAD(3, "road"),

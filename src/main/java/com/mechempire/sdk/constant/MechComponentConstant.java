@@ -21,11 +21,20 @@ public class MechComponentConstant {
 
     public static final String COMPONENT_AMMUNITION = "ammunition";
 
-    public static final int ID_CANNON_WEAPON = 1; // 加农炮
+    /**
+     * 加农炮
+     */
+    public static final int ID_CANNON_WEAPON = 1;
 
-    public static final int ID_DESTROYER_VEHICLE = 1; // 毁灭者
+    /**
+     * 毁灭者
+     */
+    public static final int ID_DESTROYER_VEHICLE = 1;
 
-    public static final int ID_DEFAULT_AMMUNITION = 1; // 默认弹药
+    /**
+     * 默认弹药
+     */
+    public static final int ID_DEFAULT_AMMUNITION = 1;
 
     public static final Map<Integer, Class<?>> WEAPON_LIST = ImmutableMap.of(ID_CANNON_WEAPON, CannonWeapon.class);
 

@@ -1,5 +1,6 @@
 package com.mechempire.sdk.core.game;
 
+import com.mechempire.sdk.constant.MapComponent;
 import com.mechempire.sdk.constant.MapComponentConstant;
 import javafx.scene.shape.Shape;
 import lombok.Data;
@@ -17,9 +18,14 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 abstract public class AbstractGameMapComponent extends AbstractGameObject {
     /**
-     * 对象 ID
+     * 运行时 id, 初始化组件对象时动态分配
      */
     public int id;
+
+    /**
+     * 地图组件类型
+     */
+    public MapComponent mapComponent;
 
     /**
      * 对象名称
