@@ -20,6 +20,8 @@ public enum MapComponentConstant {
     COMPONENT_MECH(4, "mech"),
     COMPONENT_WEAPON(5, "weapon"),
     COMPONENT_VEHICLE(6, "vehicle"),
+    COMPONENT_BASECAMP_IMAGE(7, "basecamp_image"),
+    COMPONENT_OBSTACLE_IMAGE(8, "obstacle_image"),
     ;
 
     @Getter

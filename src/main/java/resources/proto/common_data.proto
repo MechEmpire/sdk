@@ -23,25 +23,6 @@ message Position2D {
   double y = 2;
 }
 
-// 地图组件
-message MapComponent {
-  uint32 id = 1;
-  string name = 2;
-  string type = 3;
-  double startX = 4;
-  double startY = 5;
-  double width = 6;
-  double length = 7;
-  int32 affinity = 8;
-  Position2D position = 9;
-  ComponentShape shape = 10;
-
-  enum ComponentShape {
-    RECTANGLE2D = 0;
-    ELLIPSE2D = 1;
-  }
-}
-
 // 地图对象
 message GameMap {
   uint32 id = 1;
@@ -51,6 +32,43 @@ message GameMap {
   double gridLength = 5;
   string mapName = 6;
   map<int32, MapComponent> components = 7;
+  repeated ImageElement mapImageElement = 8;
+
+  // 地图组件
+  message MapComponent {
+    uint32 id = 1;
+    string name = 2;
+    string type = 3;
+    double startX = 4;
+    double startY = 5;
+    double width = 6;
+    double length = 7;
+    int32 affinity = 8;
+    Position2D position = 9;
+    ComponentShape shape = 10;
+
+    enum ComponentShape {
+      RECTANGLE2D = 0;
+      ELLIPSE2D = 1;
+    }
+  }
+
+  // 地图图层
+  message ImageElement {
+    string source = 1;
+    uint32 offsetX = 2;
+    uint32 offsetY = 3;
+    uint32 width = 4;
+    uint32 height = 5;
+    double opacity = 6;
+    ElementType imageType = 7;
+
+    enum ElementType {
+      COMMON = 0; // 普通地图图片
+      BACKGROUND = 1; // 背景图片
+      LOGO = 2; // logo
+    }
+  }
 }
 
 // 游戏世界
@@ -58,17 +76,17 @@ message EngineWorld {
   double windowWidth = 1;
   double windowLength = 2;
   GameMap gameMap = 3;
-};
+}
 
 // 初始化请求参数
 message InitRequest {
   double screenWidth = 1;
   double screenHeight = 2;
-};
+}
 
 message CommonData {
   int32 statusCode = 1;
-  int64 timestamp = 2;
+  uint64 timestamp = 2;
   string message = 3;
   CommandEnum command = 4;
   google.protobuf.Any data = 5;

@@ -4,6 +4,8 @@ import com.mechempire.sdk.constant.MapComponent;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.Objects;
+
 /**
  * package: com.mechempire.sdk.core.game
  *
@@ -14,7 +16,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-abstract public class AbstractMech extends AbstractGameMapComponent implements ILiving {
+abstract public class AbstractMech extends AbstractGameMapComponent implements ILiving, IMovable {
     /**
      * 载具组件
      */
@@ -55,18 +57,23 @@ abstract public class AbstractMech extends AbstractGameMapComponent implements I
      *
      * @param position 位置
      */
+    @Override
     public void updatePosition(AbstractPosition position) {
         this.setPosition(position);
-        if (null != this.getVehicle()) {
-            this.getVehicle().setPosition(position);
+        double startX = position.getX() - this.getWidth() / 2.0;
+        double startY = position.getY() - this.getLength() / 2.0;
+        this.setStartX(startX);
+        this.setStartY(startY);
+        if (Objects.nonNull(this.getVehicle())) {
+            this.getVehicle().updatePosition(position);
         }
 
-        if (null != this.getWeapon()) {
-            this.getWeapon().setPosition(position);
+        if (Objects.nonNull(this.getWeapon())) {
+            this.getWeapon().updatePosition(position);
         }
 
-        if (null != this.getAmmunition()) {
-            this.getAmmunition().setPosition(position);
+        if (Objects.nonNull(this.getAmmunition())) {
+            this.getAmmunition().updatePosition(position);
         }
     }
 }

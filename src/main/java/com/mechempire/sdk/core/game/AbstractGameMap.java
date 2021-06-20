@@ -2,8 +2,7 @@ package com.mechempire.sdk.core.game;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
+import com.mechempire.sdk.core.component.MapImageElement;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -53,20 +52,15 @@ abstract public class AbstractGameMap extends AbstractGameObject {
     protected String name = "map_v1";
 
     /**
-     * 地图背景
-     */
-    protected Background background;
-
-    /**
-     * 图片组件
-     */
-    protected List<ImageView> imageViewList = Lists.newArrayList();
-
-    /**
      * 地图组件
      * hash 结构,便于查找
      */
     protected HashMap<Integer, AbstractGameMapComponent> components = Maps.newHashMap();
+
+    /**
+     * 地图图片元素
+     */
+    protected List<MapImageElement> imageElementList = Lists.newArrayList();
 
     /**
      * 从地图组件 hash 中获取某个组件

@@ -41,7 +41,7 @@ public class DestroyerVehicle extends AbstractVehicle {
      * 载具速度 px/ms
      */
     @Getter
-    protected double speed = 0.00005;
+    protected double speed = 0.00000001;
 
     @Override
     public byte[] forward(double targetX, double targetY) {

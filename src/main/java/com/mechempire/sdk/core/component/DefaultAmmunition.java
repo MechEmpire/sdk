@@ -1,6 +1,7 @@
 package com.mechempire.sdk.core.component;
 
 import com.mechempire.sdk.core.game.AbstractAmmunition;
+import com.mechempire.sdk.core.game.AbstractPosition;
 import lombok.Data;
 
 /**

@@ -23,4 +23,13 @@ abstract public class AbstractVehicle extends AbstractGameMapComponent implement
     @Setter
     @Getter
     protected AbstractMech mech;
+
+    @Override
+    public void updatePosition(AbstractPosition position) {
+        this.setPosition(position);
+        double startX = position.getX() - this.getWidth() / 2.0;
+        double startY = position.getY() - this.getLength() / 2.0;
+        this.setStartX(startX);
+        this.setStartY(startY);
+    }
 }

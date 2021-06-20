@@ -10,10 +10,10 @@ public class RuntimeConstant {
     /**
      * fps
      */
-    public static final int FPS = 50;
+    public static final int FPS = 64;
 
     /**
      * frame gap
      */
-    public static final int FRAME_GAP = 20;
+    public static final double FRAME_GAP = 1000000000D / FPS;
 }

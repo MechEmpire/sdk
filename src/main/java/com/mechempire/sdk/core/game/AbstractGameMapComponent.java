@@ -33,6 +33,11 @@ abstract public class AbstractGameMapComponent extends AbstractGameObject {
     protected String name;
 
     /**
+     * 图片类型资源名称
+     */
+    protected String source;
+
+    /**
      * 对象类型
      */
     protected MapComponentConstant type;

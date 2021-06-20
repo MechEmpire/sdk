@@ -7,6 +7,9 @@ package com.mechempire.sdk.constant;
  * @date 2020/12/16 上午10:35
  */
 public enum MechRunResult {
+    /**
+     * mech run result
+     */
     SUCCESS(0, "执行成功"),
     READY(1, "准备中"),
     FAILED(2, "执行失败"),

@@ -2025,1578 +2025,6 @@ public final class CommonDataProto {
 
   }
 
-  public interface MapComponentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MapComponent)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>uint32 id = 1;</code>
-     * @return The id.
-     */
-    int getId();
-
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    java.lang.String getName();
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <code>string type = 3;</code>
-     * @return The type.
-     */
-    java.lang.String getType();
-    /**
-     * <code>string type = 3;</code>
-     * @return The bytes for type.
-     */
-    com.google.protobuf.ByteString
-        getTypeBytes();
-
-    /**
-     * <code>double startX = 4;</code>
-     * @return The startX.
-     */
-    double getStartX();
-
-    /**
-     * <code>double startY = 5;</code>
-     * @return The startY.
-     */
-    double getStartY();
-
-    /**
-     * <code>double width = 6;</code>
-     * @return The width.
-     */
-    double getWidth();
-
-    /**
-     * <code>double length = 7;</code>
-     * @return The length.
-     */
-    double getLength();
-
-    /**
-     * <code>int32 affinity = 8;</code>
-     * @return The affinity.
-     */
-    int getAffinity();
-
-    /**
-     * <code>.Position2D position = 9;</code>
-     * @return Whether the position field is set.
-     */
-    boolean hasPosition();
-    /**
-     * <code>.Position2D position = 9;</code>
-     * @return The position.
-     */
-    com.mechempire.sdk.proto.CommonDataProto.Position2D getPosition();
-    /**
-     * <code>.Position2D position = 9;</code>
-     */
-    com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder getPositionOrBuilder();
-
-    /**
-     * <code>.MapComponent.ComponentShape shape = 10;</code>
-     * @return The enum numeric value on the wire for shape.
-     */
-    int getShapeValue();
-    /**
-     * <code>.MapComponent.ComponentShape shape = 10;</code>
-     * @return The shape.
-     */
-    com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape getShape();
-  }
-  /**
-   * <pre>
-   * 地图组件
-   * </pre>
-   *
-   * Protobuf type {@code MapComponent}
-   */
-  public static final class MapComponent extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MapComponent)
-      MapComponentOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MapComponent.newBuilder() to construct.
-    private MapComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MapComponent() {
-      name_ = "";
-      type_ = "";
-      shape_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MapComponent();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MapComponent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              type_ = s;
-              break;
-            }
-            case 33: {
-
-              startX_ = input.readDouble();
-              break;
-            }
-            case 41: {
-
-              startY_ = input.readDouble();
-              break;
-            }
-            case 49: {
-
-              width_ = input.readDouble();
-              break;
-            }
-            case 57: {
-
-              length_ = input.readDouble();
-              break;
-            }
-            case 64: {
-
-              affinity_ = input.readInt32();
-              break;
-            }
-            case 74: {
-              com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder subBuilder = null;
-              if (position_ != null) {
-                subBuilder = position_.toBuilder();
-              }
-              position_ = input.readMessage(com.mechempire.sdk.proto.CommonDataProto.Position2D.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(position_);
-                position_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 80: {
-              int rawValue = input.readEnum();
-
-              shape_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.mechempire.sdk.proto.CommonDataProto.internal_static_MapComponent_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.mechempire.sdk.proto.CommonDataProto.internal_static_MapComponent_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.mechempire.sdk.proto.CommonDataProto.MapComponent.class, com.mechempire.sdk.proto.CommonDataProto.MapComponent.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code MapComponent.ComponentShape}
-     */
-    public enum ComponentShape
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>RECTANGLE2D = 0;</code>
-       */
-      RECTANGLE2D(0),
-      /**
-       * <code>ELLIPSE2D = 1;</code>
-       */
-      ELLIPSE2D(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>RECTANGLE2D = 0;</code>
-       */
-      public static final int RECTANGLE2D_VALUE = 0;
-      /**
-       * <code>ELLIPSE2D = 1;</code>
-       */
-      public static final int ELLIPSE2D_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ComponentShape valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ComponentShape forNumber(int value) {
-        switch (value) {
-          case 0: return RECTANGLE2D;
-          case 1: return ELLIPSE2D;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ComponentShape>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ComponentShape> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ComponentShape>() {
-              public ComponentShape findValueByNumber(int number) {
-                return ComponentShape.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.mechempire.sdk.proto.CommonDataProto.MapComponent.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ComponentShape[] VALUES = values();
-
-      public static ComponentShape valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private ComponentShape(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:MapComponent.ComponentShape)
-    }
-
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
-    /**
-     * <code>uint32 id = 1;</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public int getId() {
-      return id_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object type_;
-    /**
-     * <code>string type = 3;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string type = 3;</code>
-     * @return The bytes for type.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STARTX_FIELD_NUMBER = 4;
-    private double startX_;
-    /**
-     * <code>double startX = 4;</code>
-     * @return The startX.
-     */
-    @java.lang.Override
-    public double getStartX() {
-      return startX_;
-    }
-
-    public static final int STARTY_FIELD_NUMBER = 5;
-    private double startY_;
-    /**
-     * <code>double startY = 5;</code>
-     * @return The startY.
-     */
-    @java.lang.Override
-    public double getStartY() {
-      return startY_;
-    }
-
-    public static final int WIDTH_FIELD_NUMBER = 6;
-    private double width_;
-    /**
-     * <code>double width = 6;</code>
-     * @return The width.
-     */
-    @java.lang.Override
-    public double getWidth() {
-      return width_;
-    }
-
-    public static final int LENGTH_FIELD_NUMBER = 7;
-    private double length_;
-    /**
-     * <code>double length = 7;</code>
-     * @return The length.
-     */
-    @java.lang.Override
-    public double getLength() {
-      return length_;
-    }
-
-    public static final int AFFINITY_FIELD_NUMBER = 8;
-    private int affinity_;
-    /**
-     * <code>int32 affinity = 8;</code>
-     * @return The affinity.
-     */
-    @java.lang.Override
-    public int getAffinity() {
-      return affinity_;
-    }
-
-    public static final int POSITION_FIELD_NUMBER = 9;
-    private com.mechempire.sdk.proto.CommonDataProto.Position2D position_;
-    /**
-     * <code>.Position2D position = 9;</code>
-     * @return Whether the position field is set.
-     */
-    @java.lang.Override
-    public boolean hasPosition() {
-      return position_ != null;
-    }
-    /**
-     * <code>.Position2D position = 9;</code>
-     * @return The position.
-     */
-    @java.lang.Override
-    public com.mechempire.sdk.proto.CommonDataProto.Position2D getPosition() {
-      return position_ == null ? com.mechempire.sdk.proto.CommonDataProto.Position2D.getDefaultInstance() : position_;
-    }
-    /**
-     * <code>.Position2D position = 9;</code>
-     */
-    @java.lang.Override
-    public com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder getPositionOrBuilder() {
-      return getPosition();
-    }
-
-    public static final int SHAPE_FIELD_NUMBER = 10;
-    private int shape_;
-    /**
-     * <code>.MapComponent.ComponentShape shape = 10;</code>
-     * @return The enum numeric value on the wire for shape.
-     */
-    @java.lang.Override public int getShapeValue() {
-      return shape_;
-    }
-    /**
-     * <code>.MapComponent.ComponentShape shape = 10;</code>
-     * @return The shape.
-     */
-    @java.lang.Override public com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape getShape() {
-      @SuppressWarnings("deprecation")
-      com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape result = com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape.valueOf(shape_);
-      return result == null ? com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape.UNRECOGNIZED : result;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(1, id_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-      }
-      if (!getTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
-      }
-      if (startX_ != 0D) {
-        output.writeDouble(4, startX_);
-      }
-      if (startY_ != 0D) {
-        output.writeDouble(5, startY_);
-      }
-      if (width_ != 0D) {
-        output.writeDouble(6, width_);
-      }
-      if (length_ != 0D) {
-        output.writeDouble(7, length_);
-      }
-      if (affinity_ != 0) {
-        output.writeInt32(8, affinity_);
-      }
-      if (position_ != null) {
-        output.writeMessage(9, getPosition());
-      }
-      if (shape_ != com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape.RECTANGLE2D.getNumber()) {
-        output.writeEnum(10, shape_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, id_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-      }
-      if (!getTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
-      }
-      if (startX_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, startX_);
-      }
-      if (startY_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, startY_);
-      }
-      if (width_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, width_);
-      }
-      if (length_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, length_);
-      }
-      if (affinity_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, affinity_);
-      }
-      if (position_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getPosition());
-      }
-      if (shape_ != com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape.RECTANGLE2D.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, shape_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.mechempire.sdk.proto.CommonDataProto.MapComponent)) {
-        return super.equals(obj);
-      }
-      com.mechempire.sdk.proto.CommonDataProto.MapComponent other = (com.mechempire.sdk.proto.CommonDataProto.MapComponent) obj;
-
-      if (getId()
-          != other.getId()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getType()
-          .equals(other.getType())) return false;
-      if (java.lang.Double.doubleToLongBits(getStartX())
-          != java.lang.Double.doubleToLongBits(
-              other.getStartX())) return false;
-      if (java.lang.Double.doubleToLongBits(getStartY())
-          != java.lang.Double.doubleToLongBits(
-              other.getStartY())) return false;
-      if (java.lang.Double.doubleToLongBits(getWidth())
-          != java.lang.Double.doubleToLongBits(
-              other.getWidth())) return false;
-      if (java.lang.Double.doubleToLongBits(getLength())
-          != java.lang.Double.doubleToLongBits(
-              other.getLength())) return false;
-      if (getAffinity()
-          != other.getAffinity()) return false;
-      if (hasPosition() != other.hasPosition()) return false;
-      if (hasPosition()) {
-        if (!getPosition()
-            .equals(other.getPosition())) return false;
-      }
-      if (shape_ != other.shape_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + STARTX_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getStartX()));
-      hash = (37 * hash) + STARTY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getStartY()));
-      hash = (37 * hash) + WIDTH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getWidth()));
-      hash = (37 * hash) + LENGTH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLength()));
-      hash = (37 * hash) + AFFINITY_FIELD_NUMBER;
-      hash = (53 * hash) + getAffinity();
-      if (hasPosition()) {
-        hash = (37 * hash) + POSITION_FIELD_NUMBER;
-        hash = (53 * hash) + getPosition().hashCode();
-      }
-      hash = (37 * hash) + SHAPE_FIELD_NUMBER;
-      hash = (53 * hash) + shape_;
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.mechempire.sdk.proto.CommonDataProto.MapComponent prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * 地图组件
-     * </pre>
-     *
-     * Protobuf type {@code MapComponent}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MapComponent)
-        com.mechempire.sdk.proto.CommonDataProto.MapComponentOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.mechempire.sdk.proto.CommonDataProto.internal_static_MapComponent_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.mechempire.sdk.proto.CommonDataProto.internal_static_MapComponent_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.mechempire.sdk.proto.CommonDataProto.MapComponent.class, com.mechempire.sdk.proto.CommonDataProto.MapComponent.Builder.class);
-      }
-
-      // Construct using com.mechempire.sdk.proto.CommonDataProto.MapComponent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        id_ = 0;
-
-        name_ = "";
-
-        type_ = "";
-
-        startX_ = 0D;
-
-        startY_ = 0D;
-
-        width_ = 0D;
-
-        length_ = 0D;
-
-        affinity_ = 0;
-
-        if (positionBuilder_ == null) {
-          position_ = null;
-        } else {
-          position_ = null;
-          positionBuilder_ = null;
-        }
-        shape_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.mechempire.sdk.proto.CommonDataProto.internal_static_MapComponent_descriptor;
-      }
-
-      @java.lang.Override
-      public com.mechempire.sdk.proto.CommonDataProto.MapComponent getDefaultInstanceForType() {
-        return com.mechempire.sdk.proto.CommonDataProto.MapComponent.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.mechempire.sdk.proto.CommonDataProto.MapComponent build() {
-        com.mechempire.sdk.proto.CommonDataProto.MapComponent result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.mechempire.sdk.proto.CommonDataProto.MapComponent buildPartial() {
-        com.mechempire.sdk.proto.CommonDataProto.MapComponent result = new com.mechempire.sdk.proto.CommonDataProto.MapComponent(this);
-        result.id_ = id_;
-        result.name_ = name_;
-        result.type_ = type_;
-        result.startX_ = startX_;
-        result.startY_ = startY_;
-        result.width_ = width_;
-        result.length_ = length_;
-        result.affinity_ = affinity_;
-        if (positionBuilder_ == null) {
-          result.position_ = position_;
-        } else {
-          result.position_ = positionBuilder_.build();
-        }
-        result.shape_ = shape_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.mechempire.sdk.proto.CommonDataProto.MapComponent) {
-          return mergeFrom((com.mechempire.sdk.proto.CommonDataProto.MapComponent)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.mechempire.sdk.proto.CommonDataProto.MapComponent other) {
-        if (other == com.mechempire.sdk.proto.CommonDataProto.MapComponent.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        if (!other.getType().isEmpty()) {
-          type_ = other.type_;
-          onChanged();
-        }
-        if (other.getStartX() != 0D) {
-          setStartX(other.getStartX());
-        }
-        if (other.getStartY() != 0D) {
-          setStartY(other.getStartY());
-        }
-        if (other.getWidth() != 0D) {
-          setWidth(other.getWidth());
-        }
-        if (other.getLength() != 0D) {
-          setLength(other.getLength());
-        }
-        if (other.getAffinity() != 0) {
-          setAffinity(other.getAffinity());
-        }
-        if (other.hasPosition()) {
-          mergePosition(other.getPosition());
-        }
-        if (other.shape_ != 0) {
-          setShapeValue(other.getShapeValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.mechempire.sdk.proto.CommonDataProto.MapComponent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.mechempire.sdk.proto.CommonDataProto.MapComponent) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int id_ ;
-      /**
-       * <code>uint32 id = 1;</code>
-       * @return The id.
-       */
-      @java.lang.Override
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>uint32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 2;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object type_ = "";
-      /**
-       * <code>string type = 3;</code>
-       * @return The type.
-       */
-      public java.lang.String getType() {
-        java.lang.Object ref = type_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          type_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string type = 3;</code>
-       * @return The bytes for type.
-       */
-      public com.google.protobuf.ByteString
-          getTypeBytes() {
-        java.lang.Object ref = type_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          type_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string type = 3;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string type = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = getDefaultInstance().getType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string type = 3;</code>
-       * @param value The bytes for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-
-      private double startX_ ;
-      /**
-       * <code>double startX = 4;</code>
-       * @return The startX.
-       */
-      @java.lang.Override
-      public double getStartX() {
-        return startX_;
-      }
-      /**
-       * <code>double startX = 4;</code>
-       * @param value The startX to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartX(double value) {
-        
-        startX_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double startX = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStartX() {
-        
-        startX_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double startY_ ;
-      /**
-       * <code>double startY = 5;</code>
-       * @return The startY.
-       */
-      @java.lang.Override
-      public double getStartY() {
-        return startY_;
-      }
-      /**
-       * <code>double startY = 5;</code>
-       * @param value The startY to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartY(double value) {
-        
-        startY_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double startY = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStartY() {
-        
-        startY_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double width_ ;
-      /**
-       * <code>double width = 6;</code>
-       * @return The width.
-       */
-      @java.lang.Override
-      public double getWidth() {
-        return width_;
-      }
-      /**
-       * <code>double width = 6;</code>
-       * @param value The width to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWidth(double value) {
-        
-        width_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double width = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWidth() {
-        
-        width_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double length_ ;
-      /**
-       * <code>double length = 7;</code>
-       * @return The length.
-       */
-      @java.lang.Override
-      public double getLength() {
-        return length_;
-      }
-      /**
-       * <code>double length = 7;</code>
-       * @param value The length to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLength(double value) {
-        
-        length_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double length = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLength() {
-        
-        length_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private int affinity_ ;
-      /**
-       * <code>int32 affinity = 8;</code>
-       * @return The affinity.
-       */
-      @java.lang.Override
-      public int getAffinity() {
-        return affinity_;
-      }
-      /**
-       * <code>int32 affinity = 8;</code>
-       * @param value The affinity to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAffinity(int value) {
-        
-        affinity_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 affinity = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAffinity() {
-        
-        affinity_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.mechempire.sdk.proto.CommonDataProto.Position2D position_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.mechempire.sdk.proto.CommonDataProto.Position2D, com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder, com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder> positionBuilder_;
-      /**
-       * <code>.Position2D position = 9;</code>
-       * @return Whether the position field is set.
-       */
-      public boolean hasPosition() {
-        return positionBuilder_ != null || position_ != null;
-      }
-      /**
-       * <code>.Position2D position = 9;</code>
-       * @return The position.
-       */
-      public com.mechempire.sdk.proto.CommonDataProto.Position2D getPosition() {
-        if (positionBuilder_ == null) {
-          return position_ == null ? com.mechempire.sdk.proto.CommonDataProto.Position2D.getDefaultInstance() : position_;
-        } else {
-          return positionBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Position2D position = 9;</code>
-       */
-      public Builder setPosition(com.mechempire.sdk.proto.CommonDataProto.Position2D value) {
-        if (positionBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          position_ = value;
-          onChanged();
-        } else {
-          positionBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Position2D position = 9;</code>
-       */
-      public Builder setPosition(
-          com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder builderForValue) {
-        if (positionBuilder_ == null) {
-          position_ = builderForValue.build();
-          onChanged();
-        } else {
-          positionBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Position2D position = 9;</code>
-       */
-      public Builder mergePosition(com.mechempire.sdk.proto.CommonDataProto.Position2D value) {
-        if (positionBuilder_ == null) {
-          if (position_ != null) {
-            position_ =
-              com.mechempire.sdk.proto.CommonDataProto.Position2D.newBuilder(position_).mergeFrom(value).buildPartial();
-          } else {
-            position_ = value;
-          }
-          onChanged();
-        } else {
-          positionBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Position2D position = 9;</code>
-       */
-      public Builder clearPosition() {
-        if (positionBuilder_ == null) {
-          position_ = null;
-          onChanged();
-        } else {
-          position_ = null;
-          positionBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Position2D position = 9;</code>
-       */
-      public com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder getPositionBuilder() {
-        
-        onChanged();
-        return getPositionFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Position2D position = 9;</code>
-       */
-      public com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder getPositionOrBuilder() {
-        if (positionBuilder_ != null) {
-          return positionBuilder_.getMessageOrBuilder();
-        } else {
-          return position_ == null ?
-              com.mechempire.sdk.proto.CommonDataProto.Position2D.getDefaultInstance() : position_;
-        }
-      }
-      /**
-       * <code>.Position2D position = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.mechempire.sdk.proto.CommonDataProto.Position2D, com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder, com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder> 
-          getPositionFieldBuilder() {
-        if (positionBuilder_ == null) {
-          positionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.mechempire.sdk.proto.CommonDataProto.Position2D, com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder, com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder>(
-                  getPosition(),
-                  getParentForChildren(),
-                  isClean());
-          position_ = null;
-        }
-        return positionBuilder_;
-      }
-
-      private int shape_ = 0;
-      /**
-       * <code>.MapComponent.ComponentShape shape = 10;</code>
-       * @return The enum numeric value on the wire for shape.
-       */
-      @java.lang.Override public int getShapeValue() {
-        return shape_;
-      }
-      /**
-       * <code>.MapComponent.ComponentShape shape = 10;</code>
-       * @param value The enum numeric value on the wire for shape to set.
-       * @return This builder for chaining.
-       */
-      public Builder setShapeValue(int value) {
-        
-        shape_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.MapComponent.ComponentShape shape = 10;</code>
-       * @return The shape.
-       */
-      @java.lang.Override
-      public com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape getShape() {
-        @SuppressWarnings("deprecation")
-        com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape result = com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape.valueOf(shape_);
-        return result == null ? com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.MapComponent.ComponentShape shape = 10;</code>
-       * @param value The shape to set.
-       * @return This builder for chaining.
-       */
-      public Builder setShape(com.mechempire.sdk.proto.CommonDataProto.MapComponent.ComponentShape value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        shape_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.MapComponent.ComponentShape shape = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearShape() {
-        
-        shape_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:MapComponent)
-    }
-
-    // @@protoc_insertion_point(class_scope:MapComponent)
-    private static final com.mechempire.sdk.proto.CommonDataProto.MapComponent DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.mechempire.sdk.proto.CommonDataProto.MapComponent();
-    }
-
-    public static com.mechempire.sdk.proto.CommonDataProto.MapComponent getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MapComponent>
-        PARSER = new com.google.protobuf.AbstractParser<MapComponent>() {
-      @java.lang.Override
-      public MapComponent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MapComponent(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MapComponent> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MapComponent> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.mechempire.sdk.proto.CommonDataProto.MapComponent getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface GameMapOrBuilder extends
       // @@protoc_insertion_point(interface_extends:GameMap)
       com.google.protobuf.MessageOrBuilder {
@@ -3644,11 +2072,11 @@ public final class CommonDataProto {
         getMapNameBytes();
 
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
     int getComponentsCount();
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
     boolean containsComponents(
         int key);
@@ -3656,26 +2084,50 @@ public final class CommonDataProto {
      * Use {@link #getComponentsMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>
+    java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>
     getComponents();
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
-    java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>
+    java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>
     getComponentsMap();
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
 
-    com.mechempire.sdk.proto.CommonDataProto.MapComponent getComponentsOrDefault(
+    com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getComponentsOrDefault(
         int key,
-        com.mechempire.sdk.proto.CommonDataProto.MapComponent defaultValue);
+        com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent defaultValue);
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
 
-    com.mechempire.sdk.proto.CommonDataProto.MapComponent getComponentsOrThrow(
+    com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getComponentsOrThrow(
         int key);
+
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    java.util.List<com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement> 
+        getMapImageElementList();
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement getMapImageElement(int index);
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    int getMapImageElementCount();
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    java.util.List<? extends com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder> 
+        getMapImageElementOrBuilderList();
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder getMapImageElementOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -3695,6 +2147,7 @@ public final class CommonDataProto {
     }
     private GameMap() {
       mapName_ = "";
+      mapImageElement_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3765,11 +2218,20 @@ public final class CommonDataProto {
                     ComponentsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>
+              com.google.protobuf.MapEntry<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>
               components__ = input.readMessage(
                   ComponentsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               components_.getMutableMap().put(
                   components__.getKey(), components__.getValue());
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                mapImageElement_ = new java.util.ArrayList<com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              mapImageElement_.add(
+                  input.readMessage(com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -3787,6 +2249,9 @@ public final class CommonDataProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          mapImageElement_ = java.util.Collections.unmodifiableList(mapImageElement_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3814,6 +2279,2754 @@ public final class CommonDataProto {
       return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.mechempire.sdk.proto.CommonDataProto.GameMap.class, com.mechempire.sdk.proto.CommonDataProto.GameMap.Builder.class);
+    }
+
+    public interface MapComponentOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:GameMap.MapComponent)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>uint32 id = 1;</code>
+       * @return The id.
+       */
+      int getId();
+
+      /**
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      java.lang.String getName();
+      /**
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      com.google.protobuf.ByteString
+          getNameBytes();
+
+      /**
+       * <code>string type = 3;</code>
+       * @return The type.
+       */
+      java.lang.String getType();
+      /**
+       * <code>string type = 3;</code>
+       * @return The bytes for type.
+       */
+      com.google.protobuf.ByteString
+          getTypeBytes();
+
+      /**
+       * <code>double startX = 4;</code>
+       * @return The startX.
+       */
+      double getStartX();
+
+      /**
+       * <code>double startY = 5;</code>
+       * @return The startY.
+       */
+      double getStartY();
+
+      /**
+       * <code>double width = 6;</code>
+       * @return The width.
+       */
+      double getWidth();
+
+      /**
+       * <code>double length = 7;</code>
+       * @return The length.
+       */
+      double getLength();
+
+      /**
+       * <code>int32 affinity = 8;</code>
+       * @return The affinity.
+       */
+      int getAffinity();
+
+      /**
+       * <code>.Position2D position = 9;</code>
+       * @return Whether the position field is set.
+       */
+      boolean hasPosition();
+      /**
+       * <code>.Position2D position = 9;</code>
+       * @return The position.
+       */
+      com.mechempire.sdk.proto.CommonDataProto.Position2D getPosition();
+      /**
+       * <code>.Position2D position = 9;</code>
+       */
+      com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder getPositionOrBuilder();
+
+      /**
+       * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+       * @return The enum numeric value on the wire for shape.
+       */
+      int getShapeValue();
+      /**
+       * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+       * @return The shape.
+       */
+      com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape getShape();
+    }
+    /**
+     * <pre>
+     * 地图组件
+     * </pre>
+     *
+     * Protobuf type {@code GameMap.MapComponent}
+     */
+    public static final class MapComponent extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:GameMap.MapComponent)
+        MapComponentOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use MapComponent.newBuilder() to construct.
+      private MapComponent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private MapComponent() {
+        name_ = "";
+        type_ = "";
+        shape_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new MapComponent();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private MapComponent(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                id_ = input.readUInt32();
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                type_ = s;
+                break;
+              }
+              case 33: {
+
+                startX_ = input.readDouble();
+                break;
+              }
+              case 41: {
+
+                startY_ = input.readDouble();
+                break;
+              }
+              case 49: {
+
+                width_ = input.readDouble();
+                break;
+              }
+              case 57: {
+
+                length_ = input.readDouble();
+                break;
+              }
+              case 64: {
+
+                affinity_ = input.readInt32();
+                break;
+              }
+              case 74: {
+                com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder subBuilder = null;
+                if (position_ != null) {
+                  subBuilder = position_.toBuilder();
+                }
+                position_ = input.readMessage(com.mechempire.sdk.proto.CommonDataProto.Position2D.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(position_);
+                  position_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 80: {
+                int rawValue = input.readEnum();
+
+                shape_ = rawValue;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_MapComponent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_MapComponent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.class, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.Builder.class);
+      }
+
+      /**
+       * Protobuf enum {@code GameMap.MapComponent.ComponentShape}
+       */
+      public enum ComponentShape
+          implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         * <code>RECTANGLE2D = 0;</code>
+         */
+        RECTANGLE2D(0),
+        /**
+         * <code>ELLIPSE2D = 1;</code>
+         */
+        ELLIPSE2D(1),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         * <code>RECTANGLE2D = 0;</code>
+         */
+        public static final int RECTANGLE2D_VALUE = 0;
+        /**
+         * <code>ELLIPSE2D = 1;</code>
+         */
+        public static final int ELLIPSE2D_VALUE = 1;
+
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ComponentShape valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static ComponentShape forNumber(int value) {
+          switch (value) {
+            case 0: return RECTANGLE2D;
+            case 1: return ELLIPSE2D;
+            default: return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ComponentShape>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+            ComponentShape> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ComponentShape>() {
+                public ComponentShape findValueByNumber(int number) {
+                  return ComponentShape.forNumber(number);
+                }
+              };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
+            getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+        public final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptorForType() {
+          return getDescriptor();
+        }
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptor() {
+          return com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final ComponentShape[] VALUES = values();
+
+        public static ComponentShape valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ComponentShape(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:GameMap.MapComponent.ComponentShape)
+      }
+
+      public static final int ID_FIELD_NUMBER = 1;
+      private int id_;
+      /**
+       * <code>uint32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+
+      public static final int NAME_FIELD_NUMBER = 2;
+      private volatile java.lang.Object name_;
+      /**
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      @java.lang.Override
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TYPE_FIELD_NUMBER = 3;
+      private volatile java.lang.Object type_;
+      /**
+       * <code>string type = 3;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string type = 3;</code>
+       * @return The bytes for type.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int STARTX_FIELD_NUMBER = 4;
+      private double startX_;
+      /**
+       * <code>double startX = 4;</code>
+       * @return The startX.
+       */
+      @java.lang.Override
+      public double getStartX() {
+        return startX_;
+      }
+
+      public static final int STARTY_FIELD_NUMBER = 5;
+      private double startY_;
+      /**
+       * <code>double startY = 5;</code>
+       * @return The startY.
+       */
+      @java.lang.Override
+      public double getStartY() {
+        return startY_;
+      }
+
+      public static final int WIDTH_FIELD_NUMBER = 6;
+      private double width_;
+      /**
+       * <code>double width = 6;</code>
+       * @return The width.
+       */
+      @java.lang.Override
+      public double getWidth() {
+        return width_;
+      }
+
+      public static final int LENGTH_FIELD_NUMBER = 7;
+      private double length_;
+      /**
+       * <code>double length = 7;</code>
+       * @return The length.
+       */
+      @java.lang.Override
+      public double getLength() {
+        return length_;
+      }
+
+      public static final int AFFINITY_FIELD_NUMBER = 8;
+      private int affinity_;
+      /**
+       * <code>int32 affinity = 8;</code>
+       * @return The affinity.
+       */
+      @java.lang.Override
+      public int getAffinity() {
+        return affinity_;
+      }
+
+      public static final int POSITION_FIELD_NUMBER = 9;
+      private com.mechempire.sdk.proto.CommonDataProto.Position2D position_;
+      /**
+       * <code>.Position2D position = 9;</code>
+       * @return Whether the position field is set.
+       */
+      @java.lang.Override
+      public boolean hasPosition() {
+        return position_ != null;
+      }
+      /**
+       * <code>.Position2D position = 9;</code>
+       * @return The position.
+       */
+      @java.lang.Override
+      public com.mechempire.sdk.proto.CommonDataProto.Position2D getPosition() {
+        return position_ == null ? com.mechempire.sdk.proto.CommonDataProto.Position2D.getDefaultInstance() : position_;
+      }
+      /**
+       * <code>.Position2D position = 9;</code>
+       */
+      @java.lang.Override
+      public com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder getPositionOrBuilder() {
+        return getPosition();
+      }
+
+      public static final int SHAPE_FIELD_NUMBER = 10;
+      private int shape_;
+      /**
+       * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+       * @return The enum numeric value on the wire for shape.
+       */
+      @java.lang.Override public int getShapeValue() {
+        return shape_;
+      }
+      /**
+       * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+       * @return The shape.
+       */
+      @java.lang.Override public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape getShape() {
+        @SuppressWarnings("deprecation")
+        com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape result = com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape.valueOf(shape_);
+        return result == null ? com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape.UNRECOGNIZED : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (id_ != 0) {
+          output.writeUInt32(1, id_);
+        }
+        if (!getNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        }
+        if (!getTypeBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
+        }
+        if (startX_ != 0D) {
+          output.writeDouble(4, startX_);
+        }
+        if (startY_ != 0D) {
+          output.writeDouble(5, startY_);
+        }
+        if (width_ != 0D) {
+          output.writeDouble(6, width_);
+        }
+        if (length_ != 0D) {
+          output.writeDouble(7, length_);
+        }
+        if (affinity_ != 0) {
+          output.writeInt32(8, affinity_);
+        }
+        if (position_ != null) {
+          output.writeMessage(9, getPosition());
+        }
+        if (shape_ != com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape.RECTANGLE2D.getNumber()) {
+          output.writeEnum(10, shape_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (id_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(1, id_);
+        }
+        if (!getNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        }
+        if (!getTypeBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
+        }
+        if (startX_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(4, startX_);
+        }
+        if (startY_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(5, startY_);
+        }
+        if (width_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(6, width_);
+        }
+        if (length_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(7, length_);
+        }
+        if (affinity_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(8, affinity_);
+        }
+        if (position_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(9, getPosition());
+        }
+        if (shape_ != com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape.RECTANGLE2D.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(10, shape_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent)) {
+          return super.equals(obj);
+        }
+        com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent other = (com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent) obj;
+
+        if (getId()
+            != other.getId()) return false;
+        if (!getName()
+            .equals(other.getName())) return false;
+        if (!getType()
+            .equals(other.getType())) return false;
+        if (java.lang.Double.doubleToLongBits(getStartX())
+            != java.lang.Double.doubleToLongBits(
+                other.getStartX())) return false;
+        if (java.lang.Double.doubleToLongBits(getStartY())
+            != java.lang.Double.doubleToLongBits(
+                other.getStartY())) return false;
+        if (java.lang.Double.doubleToLongBits(getWidth())
+            != java.lang.Double.doubleToLongBits(
+                other.getWidth())) return false;
+        if (java.lang.Double.doubleToLongBits(getLength())
+            != java.lang.Double.doubleToLongBits(
+                other.getLength())) return false;
+        if (getAffinity()
+            != other.getAffinity()) return false;
+        if (hasPosition() != other.hasPosition()) return false;
+        if (hasPosition()) {
+          if (!getPosition()
+              .equals(other.getPosition())) return false;
+        }
+        if (shape_ != other.shape_) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getType().hashCode();
+        hash = (37 * hash) + STARTX_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getStartX()));
+        hash = (37 * hash) + STARTY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getStartY()));
+        hash = (37 * hash) + WIDTH_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getWidth()));
+        hash = (37 * hash) + LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getLength()));
+        hash = (37 * hash) + AFFINITY_FIELD_NUMBER;
+        hash = (53 * hash) + getAffinity();
+        if (hasPosition()) {
+          hash = (37 * hash) + POSITION_FIELD_NUMBER;
+          hash = (53 * hash) + getPosition().hashCode();
+        }
+        hash = (37 * hash) + SHAPE_FIELD_NUMBER;
+        hash = (53 * hash) + shape_;
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * 地图组件
+       * </pre>
+       *
+       * Protobuf type {@code GameMap.MapComponent}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:GameMap.MapComponent)
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_MapComponent_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_MapComponent_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.class, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.Builder.class);
+        }
+
+        // Construct using com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          id_ = 0;
+
+          name_ = "";
+
+          type_ = "";
+
+          startX_ = 0D;
+
+          startY_ = 0D;
+
+          width_ = 0D;
+
+          length_ = 0D;
+
+          affinity_ = 0;
+
+          if (positionBuilder_ == null) {
+            position_ = null;
+          } else {
+            position_ = null;
+            positionBuilder_ = null;
+          }
+          shape_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_MapComponent_descriptor;
+        }
+
+        @java.lang.Override
+        public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getDefaultInstanceForType() {
+          return com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent build() {
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent buildPartial() {
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent result = new com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent(this);
+          result.id_ = id_;
+          result.name_ = name_;
+          result.type_ = type_;
+          result.startX_ = startX_;
+          result.startY_ = startY_;
+          result.width_ = width_;
+          result.length_ = length_;
+          result.affinity_ = affinity_;
+          if (positionBuilder_ == null) {
+            result.position_ = position_;
+          } else {
+            result.position_ = positionBuilder_.build();
+          }
+          result.shape_ = shape_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent) {
+            return mergeFrom((com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent other) {
+          if (other == com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.getDefaultInstance()) return this;
+          if (other.getId() != 0) {
+            setId(other.getId());
+          }
+          if (!other.getName().isEmpty()) {
+            name_ = other.name_;
+            onChanged();
+          }
+          if (!other.getType().isEmpty()) {
+            type_ = other.type_;
+            onChanged();
+          }
+          if (other.getStartX() != 0D) {
+            setStartX(other.getStartX());
+          }
+          if (other.getStartY() != 0D) {
+            setStartY(other.getStartY());
+          }
+          if (other.getWidth() != 0D) {
+            setWidth(other.getWidth());
+          }
+          if (other.getLength() != 0D) {
+            setLength(other.getLength());
+          }
+          if (other.getAffinity() != 0) {
+            setAffinity(other.getAffinity());
+          }
+          if (other.hasPosition()) {
+            mergePosition(other.getPosition());
+          }
+          if (other.shape_ != 0) {
+            setShapeValue(other.getShapeValue());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int id_ ;
+        /**
+         * <code>uint32 id = 1;</code>
+         * @return The id.
+         */
+        @java.lang.Override
+        public int getId() {
+          return id_;
+        }
+        /**
+         * <code>uint32 id = 1;</code>
+         * @param value The id to set.
+         * @return This builder for chaining.
+         */
+        public Builder setId(int value) {
+          
+          id_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 id = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearId() {
+          
+          id_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object name_ = "";
+        /**
+         * <code>string name = 2;</code>
+         * @return The name.
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string name = 2;</code>
+         * @return The bytes for name.
+         */
+        public com.google.protobuf.ByteString
+            getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string name = 2;</code>
+         * @param value The name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          name_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string name = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearName() {
+          
+          name_ = getDefaultInstance().getName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string name = 2;</code>
+         * @param value The bytes for name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          name_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object type_ = "";
+        /**
+         * <code>string type = 3;</code>
+         * @return The type.
+         */
+        public java.lang.String getType() {
+          java.lang.Object ref = type_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            type_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string type = 3;</code>
+         * @return The bytes for type.
+         */
+        public com.google.protobuf.ByteString
+            getTypeBytes() {
+          java.lang.Object ref = type_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            type_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string type = 3;</code>
+         * @param value The type to set.
+         * @return This builder for chaining.
+         */
+        public Builder setType(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          type_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string type = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearType() {
+          
+          type_ = getDefaultInstance().getType();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string type = 3;</code>
+         * @param value The bytes for type to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTypeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          type_ = value;
+          onChanged();
+          return this;
+        }
+
+        private double startX_ ;
+        /**
+         * <code>double startX = 4;</code>
+         * @return The startX.
+         */
+        @java.lang.Override
+        public double getStartX() {
+          return startX_;
+        }
+        /**
+         * <code>double startX = 4;</code>
+         * @param value The startX to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStartX(double value) {
+          
+          startX_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>double startX = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearStartX() {
+          
+          startX_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double startY_ ;
+        /**
+         * <code>double startY = 5;</code>
+         * @return The startY.
+         */
+        @java.lang.Override
+        public double getStartY() {
+          return startY_;
+        }
+        /**
+         * <code>double startY = 5;</code>
+         * @param value The startY to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStartY(double value) {
+          
+          startY_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>double startY = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearStartY() {
+          
+          startY_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double width_ ;
+        /**
+         * <code>double width = 6;</code>
+         * @return The width.
+         */
+        @java.lang.Override
+        public double getWidth() {
+          return width_;
+        }
+        /**
+         * <code>double width = 6;</code>
+         * @param value The width to set.
+         * @return This builder for chaining.
+         */
+        public Builder setWidth(double value) {
+          
+          width_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>double width = 6;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearWidth() {
+          
+          width_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double length_ ;
+        /**
+         * <code>double length = 7;</code>
+         * @return The length.
+         */
+        @java.lang.Override
+        public double getLength() {
+          return length_;
+        }
+        /**
+         * <code>double length = 7;</code>
+         * @param value The length to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLength(double value) {
+          
+          length_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>double length = 7;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearLength() {
+          
+          length_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private int affinity_ ;
+        /**
+         * <code>int32 affinity = 8;</code>
+         * @return The affinity.
+         */
+        @java.lang.Override
+        public int getAffinity() {
+          return affinity_;
+        }
+        /**
+         * <code>int32 affinity = 8;</code>
+         * @param value The affinity to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAffinity(int value) {
+          
+          affinity_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 affinity = 8;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAffinity() {
+          
+          affinity_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.mechempire.sdk.proto.CommonDataProto.Position2D position_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.mechempire.sdk.proto.CommonDataProto.Position2D, com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder, com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder> positionBuilder_;
+        /**
+         * <code>.Position2D position = 9;</code>
+         * @return Whether the position field is set.
+         */
+        public boolean hasPosition() {
+          return positionBuilder_ != null || position_ != null;
+        }
+        /**
+         * <code>.Position2D position = 9;</code>
+         * @return The position.
+         */
+        public com.mechempire.sdk.proto.CommonDataProto.Position2D getPosition() {
+          if (positionBuilder_ == null) {
+            return position_ == null ? com.mechempire.sdk.proto.CommonDataProto.Position2D.getDefaultInstance() : position_;
+          } else {
+            return positionBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>.Position2D position = 9;</code>
+         */
+        public Builder setPosition(com.mechempire.sdk.proto.CommonDataProto.Position2D value) {
+          if (positionBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            position_ = value;
+            onChanged();
+          } else {
+            positionBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Position2D position = 9;</code>
+         */
+        public Builder setPosition(
+            com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder builderForValue) {
+          if (positionBuilder_ == null) {
+            position_ = builderForValue.build();
+            onChanged();
+          } else {
+            positionBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Position2D position = 9;</code>
+         */
+        public Builder mergePosition(com.mechempire.sdk.proto.CommonDataProto.Position2D value) {
+          if (positionBuilder_ == null) {
+            if (position_ != null) {
+              position_ =
+                com.mechempire.sdk.proto.CommonDataProto.Position2D.newBuilder(position_).mergeFrom(value).buildPartial();
+            } else {
+              position_ = value;
+            }
+            onChanged();
+          } else {
+            positionBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Position2D position = 9;</code>
+         */
+        public Builder clearPosition() {
+          if (positionBuilder_ == null) {
+            position_ = null;
+            onChanged();
+          } else {
+            position_ = null;
+            positionBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <code>.Position2D position = 9;</code>
+         */
+        public com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder getPositionBuilder() {
+          
+          onChanged();
+          return getPositionFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>.Position2D position = 9;</code>
+         */
+        public com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder getPositionOrBuilder() {
+          if (positionBuilder_ != null) {
+            return positionBuilder_.getMessageOrBuilder();
+          } else {
+            return position_ == null ?
+                com.mechempire.sdk.proto.CommonDataProto.Position2D.getDefaultInstance() : position_;
+          }
+        }
+        /**
+         * <code>.Position2D position = 9;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.mechempire.sdk.proto.CommonDataProto.Position2D, com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder, com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder> 
+            getPositionFieldBuilder() {
+          if (positionBuilder_ == null) {
+            positionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.mechempire.sdk.proto.CommonDataProto.Position2D, com.mechempire.sdk.proto.CommonDataProto.Position2D.Builder, com.mechempire.sdk.proto.CommonDataProto.Position2DOrBuilder>(
+                    getPosition(),
+                    getParentForChildren(),
+                    isClean());
+            position_ = null;
+          }
+          return positionBuilder_;
+        }
+
+        private int shape_ = 0;
+        /**
+         * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+         * @return The enum numeric value on the wire for shape.
+         */
+        @java.lang.Override public int getShapeValue() {
+          return shape_;
+        }
+        /**
+         * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+         * @param value The enum numeric value on the wire for shape to set.
+         * @return This builder for chaining.
+         */
+        public Builder setShapeValue(int value) {
+          
+          shape_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+         * @return The shape.
+         */
+        @java.lang.Override
+        public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape getShape() {
+          @SuppressWarnings("deprecation")
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape result = com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape.valueOf(shape_);
+          return result == null ? com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+         * @param value The shape to set.
+         * @return This builder for chaining.
+         */
+        public Builder setShape(com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.ComponentShape value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          shape_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.GameMap.MapComponent.ComponentShape shape = 10;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearShape() {
+          
+          shape_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:GameMap.MapComponent)
+      }
+
+      // @@protoc_insertion_point(class_scope:GameMap.MapComponent)
+      private static final com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent();
+      }
+
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MapComponent>
+          PARSER = new com.google.protobuf.AbstractParser<MapComponent>() {
+        @java.lang.Override
+        public MapComponent parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MapComponent(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<MapComponent> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MapComponent> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface ImageElementOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:GameMap.ImageElement)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string source = 1;</code>
+       * @return The source.
+       */
+      java.lang.String getSource();
+      /**
+       * <code>string source = 1;</code>
+       * @return The bytes for source.
+       */
+      com.google.protobuf.ByteString
+          getSourceBytes();
+
+      /**
+       * <code>uint32 offsetX = 2;</code>
+       * @return The offsetX.
+       */
+      int getOffsetX();
+
+      /**
+       * <code>uint32 offsetY = 3;</code>
+       * @return The offsetY.
+       */
+      int getOffsetY();
+
+      /**
+       * <code>uint32 width = 4;</code>
+       * @return The width.
+       */
+      int getWidth();
+
+      /**
+       * <code>uint32 height = 5;</code>
+       * @return The height.
+       */
+      int getHeight();
+
+      /**
+       * <code>double opacity = 6;</code>
+       * @return The opacity.
+       */
+      double getOpacity();
+
+      /**
+       * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+       * @return The enum numeric value on the wire for imageType.
+       */
+      int getImageTypeValue();
+      /**
+       * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+       * @return The imageType.
+       */
+      com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType getImageType();
+    }
+    /**
+     * <pre>
+     * 地图图层
+     * </pre>
+     *
+     * Protobuf type {@code GameMap.ImageElement}
+     */
+    public static final class ImageElement extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:GameMap.ImageElement)
+        ImageElementOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use ImageElement.newBuilder() to construct.
+      private ImageElement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private ImageElement() {
+        source_ = "";
+        imageType_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new ImageElement();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ImageElement(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                source_ = s;
+                break;
+              }
+              case 16: {
+
+                offsetX_ = input.readUInt32();
+                break;
+              }
+              case 24: {
+
+                offsetY_ = input.readUInt32();
+                break;
+              }
+              case 32: {
+
+                width_ = input.readUInt32();
+                break;
+              }
+              case 40: {
+
+                height_ = input.readUInt32();
+                break;
+              }
+              case 49: {
+
+                opacity_ = input.readDouble();
+                break;
+              }
+              case 56: {
+                int rawValue = input.readEnum();
+
+                imageType_ = rawValue;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_ImageElement_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_ImageElement_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.class, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder.class);
+      }
+
+      /**
+       * Protobuf enum {@code GameMap.ImageElement.ElementType}
+       */
+      public enum ElementType
+          implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         * <pre>
+         * 普通地图图片
+         * </pre>
+         *
+         * <code>COMMON = 0;</code>
+         */
+        COMMON(0),
+        /**
+         * <pre>
+         * 背景图片
+         * </pre>
+         *
+         * <code>BACKGROUND = 1;</code>
+         */
+        BACKGROUND(1),
+        /**
+         * <pre>
+         * logo
+         * </pre>
+         *
+         * <code>LOGO = 2;</code>
+         */
+        LOGO(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         * <pre>
+         * 普通地图图片
+         * </pre>
+         *
+         * <code>COMMON = 0;</code>
+         */
+        public static final int COMMON_VALUE = 0;
+        /**
+         * <pre>
+         * 背景图片
+         * </pre>
+         *
+         * <code>BACKGROUND = 1;</code>
+         */
+        public static final int BACKGROUND_VALUE = 1;
+        /**
+         * <pre>
+         * logo
+         * </pre>
+         *
+         * <code>LOGO = 2;</code>
+         */
+        public static final int LOGO_VALUE = 2;
+
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ElementType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static ElementType forNumber(int value) {
+          switch (value) {
+            case 0: return COMMON;
+            case 1: return BACKGROUND;
+            case 2: return LOGO;
+            default: return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ElementType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+            ElementType> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ElementType>() {
+                public ElementType findValueByNumber(int number) {
+                  return ElementType.forNumber(number);
+                }
+              };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
+            getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+        public final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptorForType() {
+          return getDescriptor();
+        }
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptor() {
+          return com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final ElementType[] VALUES = values();
+
+        public static ElementType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ElementType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:GameMap.ImageElement.ElementType)
+      }
+
+      public static final int SOURCE_FIELD_NUMBER = 1;
+      private volatile java.lang.Object source_;
+      /**
+       * <code>string source = 1;</code>
+       * @return The source.
+       */
+      @java.lang.Override
+      public java.lang.String getSource() {
+        java.lang.Object ref = source_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          source_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string source = 1;</code>
+       * @return The bytes for source.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getSourceBytes() {
+        java.lang.Object ref = source_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          source_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int OFFSETX_FIELD_NUMBER = 2;
+      private int offsetX_;
+      /**
+       * <code>uint32 offsetX = 2;</code>
+       * @return The offsetX.
+       */
+      @java.lang.Override
+      public int getOffsetX() {
+        return offsetX_;
+      }
+
+      public static final int OFFSETY_FIELD_NUMBER = 3;
+      private int offsetY_;
+      /**
+       * <code>uint32 offsetY = 3;</code>
+       * @return The offsetY.
+       */
+      @java.lang.Override
+      public int getOffsetY() {
+        return offsetY_;
+      }
+
+      public static final int WIDTH_FIELD_NUMBER = 4;
+      private int width_;
+      /**
+       * <code>uint32 width = 4;</code>
+       * @return The width.
+       */
+      @java.lang.Override
+      public int getWidth() {
+        return width_;
+      }
+
+      public static final int HEIGHT_FIELD_NUMBER = 5;
+      private int height_;
+      /**
+       * <code>uint32 height = 5;</code>
+       * @return The height.
+       */
+      @java.lang.Override
+      public int getHeight() {
+        return height_;
+      }
+
+      public static final int OPACITY_FIELD_NUMBER = 6;
+      private double opacity_;
+      /**
+       * <code>double opacity = 6;</code>
+       * @return The opacity.
+       */
+      @java.lang.Override
+      public double getOpacity() {
+        return opacity_;
+      }
+
+      public static final int IMAGETYPE_FIELD_NUMBER = 7;
+      private int imageType_;
+      /**
+       * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+       * @return The enum numeric value on the wire for imageType.
+       */
+      @java.lang.Override public int getImageTypeValue() {
+        return imageType_;
+      }
+      /**
+       * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+       * @return The imageType.
+       */
+      @java.lang.Override public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType getImageType() {
+        @SuppressWarnings("deprecation")
+        com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType result = com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType.valueOf(imageType_);
+        return result == null ? com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType.UNRECOGNIZED : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getSourceBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, source_);
+        }
+        if (offsetX_ != 0) {
+          output.writeUInt32(2, offsetX_);
+        }
+        if (offsetY_ != 0) {
+          output.writeUInt32(3, offsetY_);
+        }
+        if (width_ != 0) {
+          output.writeUInt32(4, width_);
+        }
+        if (height_ != 0) {
+          output.writeUInt32(5, height_);
+        }
+        if (opacity_ != 0D) {
+          output.writeDouble(6, opacity_);
+        }
+        if (imageType_ != com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType.COMMON.getNumber()) {
+          output.writeEnum(7, imageType_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getSourceBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, source_);
+        }
+        if (offsetX_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(2, offsetX_);
+        }
+        if (offsetY_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(3, offsetY_);
+        }
+        if (width_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(4, width_);
+        }
+        if (height_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(5, height_);
+        }
+        if (opacity_ != 0D) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(6, opacity_);
+        }
+        if (imageType_ != com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType.COMMON.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(7, imageType_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement)) {
+          return super.equals(obj);
+        }
+        com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement other = (com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement) obj;
+
+        if (!getSource()
+            .equals(other.getSource())) return false;
+        if (getOffsetX()
+            != other.getOffsetX()) return false;
+        if (getOffsetY()
+            != other.getOffsetY()) return false;
+        if (getWidth()
+            != other.getWidth()) return false;
+        if (getHeight()
+            != other.getHeight()) return false;
+        if (java.lang.Double.doubleToLongBits(getOpacity())
+            != java.lang.Double.doubleToLongBits(
+                other.getOpacity())) return false;
+        if (imageType_ != other.imageType_) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSource().hashCode();
+        hash = (37 * hash) + OFFSETX_FIELD_NUMBER;
+        hash = (53 * hash) + getOffsetX();
+        hash = (37 * hash) + OFFSETY_FIELD_NUMBER;
+        hash = (53 * hash) + getOffsetY();
+        hash = (37 * hash) + WIDTH_FIELD_NUMBER;
+        hash = (53 * hash) + getWidth();
+        hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
+        hash = (53 * hash) + getHeight();
+        hash = (37 * hash) + OPACITY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getOpacity()));
+        hash = (37 * hash) + IMAGETYPE_FIELD_NUMBER;
+        hash = (53 * hash) + imageType_;
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * 地图图层
+       * </pre>
+       *
+       * Protobuf type {@code GameMap.ImageElement}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:GameMap.ImageElement)
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_ImageElement_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_ImageElement_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.class, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder.class);
+        }
+
+        // Construct using com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          source_ = "";
+
+          offsetX_ = 0;
+
+          offsetY_ = 0;
+
+          width_ = 0;
+
+          height_ = 0;
+
+          opacity_ = 0D;
+
+          imageType_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_ImageElement_descriptor;
+        }
+
+        @java.lang.Override
+        public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement getDefaultInstanceForType() {
+          return com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement build() {
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement buildPartial() {
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement result = new com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement(this);
+          result.source_ = source_;
+          result.offsetX_ = offsetX_;
+          result.offsetY_ = offsetY_;
+          result.width_ = width_;
+          result.height_ = height_;
+          result.opacity_ = opacity_;
+          result.imageType_ = imageType_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement) {
+            return mergeFrom((com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement other) {
+          if (other == com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.getDefaultInstance()) return this;
+          if (!other.getSource().isEmpty()) {
+            source_ = other.source_;
+            onChanged();
+          }
+          if (other.getOffsetX() != 0) {
+            setOffsetX(other.getOffsetX());
+          }
+          if (other.getOffsetY() != 0) {
+            setOffsetY(other.getOffsetY());
+          }
+          if (other.getWidth() != 0) {
+            setWidth(other.getWidth());
+          }
+          if (other.getHeight() != 0) {
+            setHeight(other.getHeight());
+          }
+          if (other.getOpacity() != 0D) {
+            setOpacity(other.getOpacity());
+          }
+          if (other.imageType_ != 0) {
+            setImageTypeValue(other.getImageTypeValue());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object source_ = "";
+        /**
+         * <code>string source = 1;</code>
+         * @return The source.
+         */
+        public java.lang.String getSource() {
+          java.lang.Object ref = source_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            source_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string source = 1;</code>
+         * @return The bytes for source.
+         */
+        public com.google.protobuf.ByteString
+            getSourceBytes() {
+          java.lang.Object ref = source_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            source_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string source = 1;</code>
+         * @param value The source to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSource(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          source_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string source = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearSource() {
+          
+          source_ = getDefaultInstance().getSource();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string source = 1;</code>
+         * @param value The bytes for source to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSourceBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          source_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int offsetX_ ;
+        /**
+         * <code>uint32 offsetX = 2;</code>
+         * @return The offsetX.
+         */
+        @java.lang.Override
+        public int getOffsetX() {
+          return offsetX_;
+        }
+        /**
+         * <code>uint32 offsetX = 2;</code>
+         * @param value The offsetX to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOffsetX(int value) {
+          
+          offsetX_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 offsetX = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearOffsetX() {
+          
+          offsetX_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int offsetY_ ;
+        /**
+         * <code>uint32 offsetY = 3;</code>
+         * @return The offsetY.
+         */
+        @java.lang.Override
+        public int getOffsetY() {
+          return offsetY_;
+        }
+        /**
+         * <code>uint32 offsetY = 3;</code>
+         * @param value The offsetY to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOffsetY(int value) {
+          
+          offsetY_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 offsetY = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearOffsetY() {
+          
+          offsetY_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int width_ ;
+        /**
+         * <code>uint32 width = 4;</code>
+         * @return The width.
+         */
+        @java.lang.Override
+        public int getWidth() {
+          return width_;
+        }
+        /**
+         * <code>uint32 width = 4;</code>
+         * @param value The width to set.
+         * @return This builder for chaining.
+         */
+        public Builder setWidth(int value) {
+          
+          width_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 width = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearWidth() {
+          
+          width_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int height_ ;
+        /**
+         * <code>uint32 height = 5;</code>
+         * @return The height.
+         */
+        @java.lang.Override
+        public int getHeight() {
+          return height_;
+        }
+        /**
+         * <code>uint32 height = 5;</code>
+         * @param value The height to set.
+         * @return This builder for chaining.
+         */
+        public Builder setHeight(int value) {
+          
+          height_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 height = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearHeight() {
+          
+          height_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private double opacity_ ;
+        /**
+         * <code>double opacity = 6;</code>
+         * @return The opacity.
+         */
+        @java.lang.Override
+        public double getOpacity() {
+          return opacity_;
+        }
+        /**
+         * <code>double opacity = 6;</code>
+         * @param value The opacity to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOpacity(double value) {
+          
+          opacity_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>double opacity = 6;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearOpacity() {
+          
+          opacity_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private int imageType_ = 0;
+        /**
+         * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+         * @return The enum numeric value on the wire for imageType.
+         */
+        @java.lang.Override public int getImageTypeValue() {
+          return imageType_;
+        }
+        /**
+         * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+         * @param value The enum numeric value on the wire for imageType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setImageTypeValue(int value) {
+          
+          imageType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+         * @return The imageType.
+         */
+        @java.lang.Override
+        public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType getImageType() {
+          @SuppressWarnings("deprecation")
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType result = com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType.valueOf(imageType_);
+          return result == null ? com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+         * @param value The imageType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setImageType(com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.ElementType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          imageType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.GameMap.ImageElement.ElementType imageType = 7;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearImageType() {
+          
+          imageType_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:GameMap.ImageElement)
+      }
+
+      // @@protoc_insertion_point(class_scope:GameMap.ImageElement)
+      private static final com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement();
+      }
+
+      public static com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ImageElement>
+          PARSER = new com.google.protobuf.AbstractParser<ImageElement>() {
+        @java.lang.Override
+        public ImageElement parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ImageElement(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<ImageElement> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ImageElement> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -3912,18 +5125,18 @@ public final class CommonDataProto {
     public static final int COMPONENTS_FIELD_NUMBER = 7;
     private static final class ComponentsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> defaultEntry =
+          java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>newDefaultInstance(
+              .<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>newDefaultInstance(
                   com.mechempire.sdk.proto.CommonDataProto.internal_static_GameMap_ComponentsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.INT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.mechempire.sdk.proto.CommonDataProto.MapComponent.getDefaultInstance());
+                  com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> components_;
-    private com.google.protobuf.MapField<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>
+        java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> components_;
+    private com.google.protobuf.MapField<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>
     internalGetComponents() {
       if (components_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -3936,7 +5149,7 @@ public final class CommonDataProto {
       return internalGetComponents().getMap().size();
     }
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
 
     @java.lang.Override
@@ -3950,44 +5163,84 @@ public final class CommonDataProto {
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> getComponents() {
+    public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> getComponents() {
       return getComponentsMap();
     }
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> getComponentsMap() {
+    public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> getComponentsMap() {
       return internalGetComponents().getMap();
     }
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
     @java.lang.Override
 
-    public com.mechempire.sdk.proto.CommonDataProto.MapComponent getComponentsOrDefault(
+    public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getComponentsOrDefault(
         int key,
-        com.mechempire.sdk.proto.CommonDataProto.MapComponent defaultValue) {
+        com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent defaultValue) {
       
-      java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> map =
+      java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> map =
           internalGetComponents().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+     * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
      */
     @java.lang.Override
 
-    public com.mechempire.sdk.proto.CommonDataProto.MapComponent getComponentsOrThrow(
+    public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getComponentsOrThrow(
         int key) {
       
-      java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> map =
+      java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> map =
           internalGetComponents().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
+    }
+
+    public static final int MAPIMAGEELEMENT_FIELD_NUMBER = 8;
+    private java.util.List<com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement> mapImageElement_;
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement> getMapImageElementList() {
+      return mapImageElement_;
+    }
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder> 
+        getMapImageElementOrBuilderList() {
+      return mapImageElement_;
+    }
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    @java.lang.Override
+    public int getMapImageElementCount() {
+      return mapImageElement_.size();
+    }
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    @java.lang.Override
+    public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement getMapImageElement(int index) {
+      return mapImageElement_.get(index);
+    }
+    /**
+     * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+     */
+    @java.lang.Override
+    public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder getMapImageElementOrBuilder(
+        int index) {
+      return mapImageElement_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4028,6 +5281,9 @@ public final class CommonDataProto {
           internalGetComponents(),
           ComponentsDefaultEntryHolder.defaultEntry,
           7);
+      for (int i = 0; i < mapImageElement_.size(); i++) {
+        output.writeMessage(8, mapImageElement_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4060,15 +5316,19 @@ public final class CommonDataProto {
       if (!getMapNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, mapName_);
       }
-      for (java.util.Map.Entry<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> entry
+      for (java.util.Map.Entry<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> entry
            : internalGetComponents().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>
+        com.google.protobuf.MapEntry<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>
         components__ = ComponentsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(7, components__);
+      }
+      for (int i = 0; i < mapImageElement_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, mapImageElement_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4103,6 +5363,8 @@ public final class CommonDataProto {
           .equals(other.getMapName())) return false;
       if (!internalGetComponents().equals(
           other.internalGetComponents())) return false;
+      if (!getMapImageElementList()
+          .equals(other.getMapImageElementList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4133,6 +5395,10 @@ public final class CommonDataProto {
       if (!internalGetComponents().getMap().isEmpty()) {
         hash = (37 * hash) + COMPONENTS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetComponents().hashCode();
+      }
+      if (getMapImageElementCount() > 0) {
+        hash = (37 * hash) + MAPIMAGEELEMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getMapImageElementList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4288,6 +5554,7 @@ public final class CommonDataProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getMapImageElementFieldBuilder();
         }
       }
       @java.lang.Override
@@ -4306,6 +5573,12 @@ public final class CommonDataProto {
         mapName_ = "";
 
         internalGetMutableComponents().clear();
+        if (mapImageElementBuilder_ == null) {
+          mapImageElement_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          mapImageElementBuilder_.clear();
+        }
         return this;
       }
 
@@ -4341,6 +5614,15 @@ public final class CommonDataProto {
         result.mapName_ = mapName_;
         result.components_ = internalGetComponents();
         result.components_.makeImmutable();
+        if (mapImageElementBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            mapImageElement_ = java.util.Collections.unmodifiableList(mapImageElement_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.mapImageElement_ = mapImageElement_;
+        } else {
+          result.mapImageElement_ = mapImageElementBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4410,6 +5692,32 @@ public final class CommonDataProto {
         }
         internalGetMutableComponents().mergeFrom(
             other.internalGetComponents());
+        if (mapImageElementBuilder_ == null) {
+          if (!other.mapImageElement_.isEmpty()) {
+            if (mapImageElement_.isEmpty()) {
+              mapImageElement_ = other.mapImageElement_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureMapImageElementIsMutable();
+              mapImageElement_.addAll(other.mapImageElement_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.mapImageElement_.isEmpty()) {
+            if (mapImageElementBuilder_.isEmpty()) {
+              mapImageElementBuilder_.dispose();
+              mapImageElementBuilder_ = null;
+              mapImageElement_ = other.mapImageElement_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              mapImageElementBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMapImageElementFieldBuilder() : null;
+            } else {
+              mapImageElementBuilder_.addAllMessages(other.mapImageElement_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4672,8 +5980,8 @@ public final class CommonDataProto {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> components_;
-      private com.google.protobuf.MapField<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>
+          java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> components_;
+      private com.google.protobuf.MapField<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>
       internalGetComponents() {
         if (components_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -4681,7 +5989,7 @@ public final class CommonDataProto {
         }
         return components_;
       }
-      private com.google.protobuf.MapField<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>
+      private com.google.protobuf.MapField<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>
       internalGetMutableComponents() {
         onChanged();;
         if (components_ == null) {
@@ -4698,7 +6006,7 @@ public final class CommonDataProto {
         return internalGetComponents().getMap().size();
       }
       /**
-       * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+       * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
        */
 
       @java.lang.Override
@@ -4712,39 +6020,39 @@ public final class CommonDataProto {
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> getComponents() {
+      public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> getComponents() {
         return getComponentsMap();
       }
       /**
-       * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+       * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> getComponentsMap() {
+      public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> getComponentsMap() {
         return internalGetComponents().getMap();
       }
       /**
-       * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+       * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
        */
       @java.lang.Override
 
-      public com.mechempire.sdk.proto.CommonDataProto.MapComponent getComponentsOrDefault(
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getComponentsOrDefault(
           int key,
-          com.mechempire.sdk.proto.CommonDataProto.MapComponent defaultValue) {
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent defaultValue) {
         
-        java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> map =
+        java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> map =
             internalGetComponents().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+       * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
        */
       @java.lang.Override
 
-      public com.mechempire.sdk.proto.CommonDataProto.MapComponent getComponentsOrThrow(
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent getComponentsOrThrow(
           int key) {
         
-        java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> map =
+        java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> map =
             internalGetComponents().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
@@ -4758,7 +6066,7 @@ public final class CommonDataProto {
         return this;
       }
       /**
-       * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+       * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
        */
 
       public Builder removeComponents(
@@ -4772,16 +6080,16 @@ public final class CommonDataProto {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent>
+      public java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent>
       getMutableComponents() {
         return internalGetMutableComponents().getMutableMap();
       }
       /**
-       * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+       * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
        */
       public Builder putComponents(
           int key,
-          com.mechempire.sdk.proto.CommonDataProto.MapComponent value) {
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent value) {
         
         if (value == null) { throw new java.lang.NullPointerException(); }
         internalGetMutableComponents().getMutableMap()
@@ -4789,14 +6097,254 @@ public final class CommonDataProto {
         return this;
       }
       /**
-       * <code>map&lt;int32, .MapComponent&gt; components = 7;</code>
+       * <code>map&lt;int32, .GameMap.MapComponent&gt; components = 7;</code>
        */
 
       public Builder putAllComponents(
-          java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.MapComponent> values) {
+          java.util.Map<java.lang.Integer, com.mechempire.sdk.proto.CommonDataProto.GameMap.MapComponent> values) {
         internalGetMutableComponents().getMutableMap()
             .putAll(values);
         return this;
+      }
+
+      private java.util.List<com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement> mapImageElement_ =
+        java.util.Collections.emptyList();
+      private void ensureMapImageElementIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          mapImageElement_ = new java.util.ArrayList<com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement>(mapImageElement_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder> mapImageElementBuilder_;
+
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public java.util.List<com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement> getMapImageElementList() {
+        if (mapImageElementBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(mapImageElement_);
+        } else {
+          return mapImageElementBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public int getMapImageElementCount() {
+        if (mapImageElementBuilder_ == null) {
+          return mapImageElement_.size();
+        } else {
+          return mapImageElementBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement getMapImageElement(int index) {
+        if (mapImageElementBuilder_ == null) {
+          return mapImageElement_.get(index);
+        } else {
+          return mapImageElementBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder setMapImageElement(
+          int index, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement value) {
+        if (mapImageElementBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMapImageElementIsMutable();
+          mapImageElement_.set(index, value);
+          onChanged();
+        } else {
+          mapImageElementBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder setMapImageElement(
+          int index, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder builderForValue) {
+        if (mapImageElementBuilder_ == null) {
+          ensureMapImageElementIsMutable();
+          mapImageElement_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          mapImageElementBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder addMapImageElement(com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement value) {
+        if (mapImageElementBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMapImageElementIsMutable();
+          mapImageElement_.add(value);
+          onChanged();
+        } else {
+          mapImageElementBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder addMapImageElement(
+          int index, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement value) {
+        if (mapImageElementBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMapImageElementIsMutable();
+          mapImageElement_.add(index, value);
+          onChanged();
+        } else {
+          mapImageElementBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder addMapImageElement(
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder builderForValue) {
+        if (mapImageElementBuilder_ == null) {
+          ensureMapImageElementIsMutable();
+          mapImageElement_.add(builderForValue.build());
+          onChanged();
+        } else {
+          mapImageElementBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder addMapImageElement(
+          int index, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder builderForValue) {
+        if (mapImageElementBuilder_ == null) {
+          ensureMapImageElementIsMutable();
+          mapImageElement_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          mapImageElementBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder addAllMapImageElement(
+          java.lang.Iterable<? extends com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement> values) {
+        if (mapImageElementBuilder_ == null) {
+          ensureMapImageElementIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, mapImageElement_);
+          onChanged();
+        } else {
+          mapImageElementBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder clearMapImageElement() {
+        if (mapImageElementBuilder_ == null) {
+          mapImageElement_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          mapImageElementBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public Builder removeMapImageElement(int index) {
+        if (mapImageElementBuilder_ == null) {
+          ensureMapImageElementIsMutable();
+          mapImageElement_.remove(index);
+          onChanged();
+        } else {
+          mapImageElementBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder getMapImageElementBuilder(
+          int index) {
+        return getMapImageElementFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder getMapImageElementOrBuilder(
+          int index) {
+        if (mapImageElementBuilder_ == null) {
+          return mapImageElement_.get(index);  } else {
+          return mapImageElementBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public java.util.List<? extends com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder> 
+           getMapImageElementOrBuilderList() {
+        if (mapImageElementBuilder_ != null) {
+          return mapImageElementBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(mapImageElement_);
+        }
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder addMapImageElementBuilder() {
+        return getMapImageElementFieldBuilder().addBuilder(
+            com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder addMapImageElementBuilder(
+          int index) {
+        return getMapImageElementFieldBuilder().addBuilder(
+            index, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .GameMap.ImageElement mapImageElement = 8;</code>
+       */
+      public java.util.List<com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder> 
+           getMapImageElementBuilderList() {
+        return getMapImageElementFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder> 
+          getMapImageElementFieldBuilder() {
+        if (mapImageElementBuilder_ == null) {
+          mapImageElementBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElement.Builder, com.mechempire.sdk.proto.CommonDataProto.GameMap.ImageElementOrBuilder>(
+                  mapImageElement_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          mapImageElement_ = null;
+        }
+        return mapImageElementBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6205,7 +7753,7 @@ public final class CommonDataProto {
     int getStatusCode();
 
     /**
-     * <code>int64 timestamp = 2;</code>
+     * <code>uint64 timestamp = 2;</code>
      * @return The timestamp.
      */
     long getTimestamp();
@@ -6302,7 +7850,7 @@ public final class CommonDataProto {
             }
             case 16: {
 
-              timestamp_ = input.readInt64();
+              timestamp_ = input.readUInt64();
               break;
             }
             case 26: {
@@ -6502,7 +8050,7 @@ public final class CommonDataProto {
     public static final int TIMESTAMP_FIELD_NUMBER = 2;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 2;</code>
+     * <code>uint64 timestamp = 2;</code>
      * @return The timestamp.
      */
     @java.lang.Override
@@ -6611,7 +8159,7 @@ public final class CommonDataProto {
         output.writeInt32(1, statusCode_);
       }
       if (timestamp_ != 0L) {
-        output.writeInt64(2, timestamp_);
+        output.writeUInt64(2, timestamp_);
       }
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
@@ -6637,7 +8185,7 @@ public final class CommonDataProto {
       }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, timestamp_);
+          .computeUInt64Size(2, timestamp_);
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
@@ -7009,7 +8557,7 @@ public final class CommonDataProto {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 2;</code>
+       * <code>uint64 timestamp = 2;</code>
        * @return The timestamp.
        */
       @java.lang.Override
@@ -7017,7 +8565,7 @@ public final class CommonDataProto {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
+       * <code>uint64 timestamp = 2;</code>
        * @param value The timestamp to set.
        * @return This builder for chaining.
        */
@@ -7028,7 +8576,7 @@ public final class CommonDataProto {
         return this;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
+       * <code>uint64 timestamp = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -7355,11 +8903,6 @@ public final class CommonDataProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Position2D_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MapComponent_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MapComponent_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GameMap_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7369,6 +8912,16 @@ public final class CommonDataProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GameMap_ComponentsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GameMap_MapComponent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GameMap_MapComponent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GameMap_ImageElement_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GameMap_ImageElement_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_EngineWorld_descriptor;
   private static final 
@@ -7398,30 +8951,37 @@ public final class CommonDataProto {
       "ssage\030\001 \003(\0132 .ResultMessageList.ResultMe" +
       "ssage\032J\n\rResultMessage\022\023\n\013componentId\030\001 " +
       "\001(\r\022\021\n\tpositionX\030\002 \001(\001\022\021\n\tpositionY\030\003 \001(" +
-      "\001\"\"\n\nPosition2D\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\"\205\002" +
-      "\n\014MapComponent\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t" +
-      "\022\014\n\004type\030\003 \001(\t\022\016\n\006startX\030\004 \001(\001\022\016\n\006startY" +
-      "\030\005 \001(\001\022\r\n\005width\030\006 \001(\001\022\016\n\006length\030\007 \001(\001\022\020\n" +
-      "\010affinity\030\010 \001(\005\022\035\n\010position\030\t \001(\0132\013.Posi" +
-      "tion2D\022+\n\005shape\030\n \001(\0162\034.MapComponent.Com" +
-      "ponentShape\"0\n\016ComponentShape\022\017\n\013RECTANG" +
-      "LE2D\020\000\022\r\n\tELLIPSE2D\020\001\"\334\001\n\007GameMap\022\n\n\002id\030" +
-      "\001 \001(\r\022\r\n\005width\030\002 \001(\001\022\016\n\006length\030\003 \001(\001\022\021\n\t" +
-      "gridWidth\030\004 \001(\001\022\022\n\ngridLength\030\005 \001(\001\022\017\n\007m" +
-      "apName\030\006 \001(\t\022,\n\ncomponents\030\007 \003(\0132\030.GameM" +
-      "ap.ComponentsEntry\032@\n\017ComponentsEntry\022\013\n" +
-      "\003key\030\001 \001(\005\022\034\n\005value\030\002 \001(\0132\r.MapComponent" +
-      ":\0028\001\"S\n\013EngineWorld\022\023\n\013windowWidth\030\001 \001(\001" +
-      "\022\024\n\014windowLength\030\002 \001(\001\022\031\n\007gameMap\030\003 \001(\0132" +
-      "\010.GameMap\"8\n\013InitRequest\022\023\n\013screenWidth\030" +
-      "\001 \001(\001\022\024\n\014screenHeight\030\002 \001(\001\"\315\001\n\nCommonDa" +
-      "ta\022\022\n\nstatusCode\030\001 \001(\005\022\021\n\ttimestamp\030\002 \001(" +
-      "\003\022\017\n\007message\030\003 \001(\t\022(\n\007command\030\004 \001(\0162\027.Co" +
-      "mmonData.CommandEnum\022\"\n\004data\030\005 \001(\0132\024.goo" +
-      "gle.protobuf.Any\"9\n\013CommandEnum\022\010\n\004PING\020" +
-      "\000\022\010\n\004INIT\020\001\022\t\n\005START\020\002\022\013\n\007RUNNING\020\003B+\n\030c" +
-      "om.mechempire.sdk.protoB\017CommonDataProto" +
-      "b\006proto3"
+      "\001\"\"\n\nPosition2D\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\"\202\006" +
+      "\n\007GameMap\022\n\n\002id\030\001 \001(\r\022\r\n\005width\030\002 \001(\001\022\016\n\006" +
+      "length\030\003 \001(\001\022\021\n\tgridWidth\030\004 \001(\001\022\022\n\ngridL" +
+      "ength\030\005 \001(\001\022\017\n\007mapName\030\006 \001(\t\022,\n\ncomponen" +
+      "ts\030\007 \003(\0132\030.GameMap.ComponentsEntry\022.\n\017ma" +
+      "pImageElement\030\010 \003(\0132\025.GameMap.ImageEleme" +
+      "nt\032H\n\017ComponentsEntry\022\013\n\003key\030\001 \001(\005\022$\n\005va" +
+      "lue\030\002 \001(\0132\025.GameMap.MapComponent:\0028\001\032\215\002\n" +
+      "\014MapComponent\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022" +
+      "\014\n\004type\030\003 \001(\t\022\016\n\006startX\030\004 \001(\001\022\016\n\006startY\030" +
+      "\005 \001(\001\022\r\n\005width\030\006 \001(\001\022\016\n\006length\030\007 \001(\001\022\020\n\010" +
+      "affinity\030\010 \001(\005\022\035\n\010position\030\t \001(\0132\013.Posit" +
+      "ion2D\0223\n\005shape\030\n \001(\0162$.GameMap.MapCompon" +
+      "ent.ComponentShape\"0\n\016ComponentShape\022\017\n\013" +
+      "RECTANGLE2D\020\000\022\r\n\tELLIPSE2D\020\001\032\333\001\n\014ImageEl" +
+      "ement\022\016\n\006source\030\001 \001(\t\022\017\n\007offsetX\030\002 \001(\r\022\017" +
+      "\n\007offsetY\030\003 \001(\r\022\r\n\005width\030\004 \001(\r\022\016\n\006height" +
+      "\030\005 \001(\r\022\017\n\007opacity\030\006 \001(\001\0224\n\timageType\030\007 \001" +
+      "(\0162!.GameMap.ImageElement.ElementType\"3\n" +
+      "\013ElementType\022\n\n\006COMMON\020\000\022\016\n\nBACKGROUND\020\001" +
+      "\022\010\n\004LOGO\020\002\"S\n\013EngineWorld\022\023\n\013windowWidth" +
+      "\030\001 \001(\001\022\024\n\014windowLength\030\002 \001(\001\022\031\n\007gameMap\030" +
+      "\003 \001(\0132\010.GameMap\"8\n\013InitRequest\022\023\n\013screen" +
+      "Width\030\001 \001(\001\022\024\n\014screenHeight\030\002 \001(\001\"\315\001\n\nCo" +
+      "mmonData\022\022\n\nstatusCode\030\001 \001(\005\022\021\n\ttimestam" +
+      "p\030\002 \001(\004\022\017\n\007message\030\003 \001(\t\022(\n\007command\030\004 \001(" +
+      "\0162\027.CommonData.CommandEnum\022\"\n\004data\030\005 \001(\013" +
+      "2\024.google.protobuf.Any\"9\n\013CommandEnum\022\010\n" +
+      "\004PING\020\000\022\010\n\004INIT\020\001\022\t\n\005START\020\002\022\013\n\007RUNNING\020" +
+      "\003B+\n\030com.mechempire.sdk.protoB\017CommonDat" +
+      "aProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7446,38 +9006,44 @@ public final class CommonDataProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Position2D_descriptor,
         new java.lang.String[] { "X", "Y", });
-    internal_static_MapComponent_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_MapComponent_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MapComponent_descriptor,
-        new java.lang.String[] { "Id", "Name", "Type", "StartX", "StartY", "Width", "Length", "Affinity", "Position", "Shape", });
     internal_static_GameMap_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_GameMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GameMap_descriptor,
-        new java.lang.String[] { "Id", "Width", "Length", "GridWidth", "GridLength", "MapName", "Components", });
+        new java.lang.String[] { "Id", "Width", "Length", "GridWidth", "GridLength", "MapName", "Components", "MapImageElement", });
     internal_static_GameMap_ComponentsEntry_descriptor =
       internal_static_GameMap_descriptor.getNestedTypes().get(0);
     internal_static_GameMap_ComponentsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GameMap_ComponentsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_GameMap_MapComponent_descriptor =
+      internal_static_GameMap_descriptor.getNestedTypes().get(1);
+    internal_static_GameMap_MapComponent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GameMap_MapComponent_descriptor,
+        new java.lang.String[] { "Id", "Name", "Type", "StartX", "StartY", "Width", "Length", "Affinity", "Position", "Shape", });
+    internal_static_GameMap_ImageElement_descriptor =
+      internal_static_GameMap_descriptor.getNestedTypes().get(2);
+    internal_static_GameMap_ImageElement_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GameMap_ImageElement_descriptor,
+        new java.lang.String[] { "Source", "OffsetX", "OffsetY", "Width", "Height", "Opacity", "ImageType", });
     internal_static_EngineWorld_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_EngineWorld_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EngineWorld_descriptor,
         new java.lang.String[] { "WindowWidth", "WindowLength", "GameMap", });
     internal_static_InitRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_InitRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_InitRequest_descriptor,
         new java.lang.String[] { "ScreenWidth", "ScreenHeight", });
     internal_static_CommonData_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_CommonData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CommonData_descriptor,
